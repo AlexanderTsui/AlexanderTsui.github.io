@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" role="img" aria-labelledby="title desc">
+  <title id="title">Bowen Cui avatar</title>
+  <desc id="desc">Initials avatar for Bowen Cui.</desc>
+  <defs>
+    <linearGradient id="bg" x1="96" y1="96" x2="624" y2="624" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0e3440"/>
+      <stop offset="0.58" stop-color="#2f7f93"/>
+      <stop offset="1" stop-color="#9ee6d8"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="35%" cy="25%" r="70%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.36"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="720" height="720" rx="180" fill="url(#bg)"/>
+  <circle cx="196" cy="174" r="190" fill="url(#glow)"/>
+  <path d="M108 525C179 407 230 298 305 176c12-20 42-20 54 0 75 122 126 231 197 349" fill="none" stroke="#eafffb" stroke-width="24" stroke-linecap="round" opacity="0.78"/>
+  <text x="360" y="407" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="182" font-weight="700" fill="#ffffff" letter-spacing="10">BC</text>
+  <text x="360" y="484" text-anchor="middle" font-family="Verdana, sans-serif" font-size="33" fill="#d9fff8" letter-spacing="10">3D GENERATION</text>
+</svg>

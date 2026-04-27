@@ -1,56 +1,111 @@
 ---
 permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: ""
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. Incidentally, these same features make it a great template for anyone that needs to show off a professional template!
+<span class="anchor" id="about-me"></span>
 
- You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and Markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
+# Biography
 
-A data-driven personal website
-======
-Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured Markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various Markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
+Hi! I am **Bowen Cui (崔博文)**, an undergraduate student at **Xi'an Jiaotong University**, majoring in **Intelligent Manufacturing Engineering (Qian Xuesen Honors Class)** and **Computer Science and Technology**.
 
-Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your Markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over - just be sure to save the Markdown files! You can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
+I am currently a remote research intern at **CAD&CG Lab / ZIP Lab, Zhejiang University**, working on **3D world models** and **efficient 3D generation**. My research interests focus on **world models, 3D generation, video generation, point cloud understanding, and robotic perception**.
 
-For those users that need more advanced functionality, the template also supports the following popular tools:
-- [MathJax](https://www.mathjax.org/) for mathematical equations
-- [Mermaid](https://mermaid.js.org/) for diagraming
-- [Plotly](https://plotly.com/javascript/) for plotting
+<p class="home-callout">I am open to research discussions and collaboration. The best way to reach me is by email: <a href="mailto:alexandertsui1483@gmail.com">alexandertsui1483@gmail.com</a>.</p>
 
-Getting started
-======
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this template](https://github.com/academicpages/academicpages.github.io) by clicking the "Use this template" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](https://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
+<span class="anchor" id="news"></span>
 
-Site-wide configuration
-------
-The main configuration file for the site is in the base directory in [_config.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_config.yml), which defines the content in the sidebars and other site-wide features. You will need to replace the default variables with ones about yourself and your site's github repository. The configuration file for the top menu is in [_data/navigation.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_data/navigation.yml). For example, if you don't have a portfolio or blog posts, you can remove those items from that navigation.yml file to remove them from the header. 
+# News
 
-Create content & metadata
-------
-For site content, there is one Markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. For example, each talk is a Markdown file in the [_talks directory](https://github.com/academicpages/academicpages.github.io/tree/master/_talks). At the top of each Markdown file is structured data in YAML about the talk, which the theme will parse to do lots of cool stuff. The same structured data about a talk is used to generate the list of talks on the [Talks page](https://academicpages.github.io/talks), each [individual page](https://academicpages.github.io/talks/2012-03-01-talk-1) for specific talks, the talks section for the [CV page](https://academicpages.github.io/cv), and the [map of places you've given a talk](https://academicpages.github.io/talkmap.html) (if you run this [python file](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.py) or [Jupyter notebook](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb), which creates the HTML for the map based on the contents of the _talks directory).
+<ul class="home-news">
+  <li><em>2025.12</em>: Joined <strong>Zhejiang University CAD&amp;CG Lab / ZIP Lab</strong> as a remote research intern, focusing on 3D world models and text-to-3D generation.</li>
+  <li><em>2025.10</em>: Led the team to a <strong>National Second Prize</strong> in the 2025 China Robotics Competition and RoboCup China, Underwater Robot Water Cruise track.</li>
+  <li><em>2025.08</em>: Started <strong>PointSA</strong>, a self-supervised point cloud segmentation project based on Slot Attention.</li>
+  <li><em>2024.11</em>: Won a <strong>National Second Prize</strong> in the 2024 China Robotics Competition and RoboCup China, Underwater Robot Water Cruise track.</li>
+</ul>
 
-**Markdown generator**
+<span class="anchor" id="research"></span>
 
-The repository includes [a set of Jupyter notebooks](https://github.com/academicpages/academicpages.github.io/tree/master/markdown_generator
-) that converts a CSV containing structured data about talks or presentations into individual Markdown files that will be properly formatted for the Academic Pages template. The sample CSVs in that directory are the ones I used to create my own personal website at stuartgeiger.com. My usual workflow is that I keep a spreadsheet of my publications and talks, then run the code in these notebooks to generate the Markdown files, then commit and push them to the GitHub repository.
+# Research & Intern Experience
 
-How to edit your site's GitHub repository
-------
-Many people use a git client to create files on their local computer and then push them to GitHub's servers. If you are not familiar with git, you can directly edit these configuration and Markdown files directly in the github.com interface. Navigate to a file (like [this one](https://github.com/academicpages/academicpages.github.io/blob/master/_talks/2012-03-01-talk-1.md) and click the pencil icon in the top right of the content preview (to the right of the "Raw | Blame | History" buttons). You can delete a file by clicking the trashcan icon to the right of the pencil icon. You can also create new files or upload files by navigating to a directory and clicking the "Create new file" or "Upload files" buttons. 
+<div class="entity-card">
+  <div class="entity-logo">ZJU</div>
+  <div>
+    <p class="entity-title"><strong>CAD&amp;CG Lab / ZIP Lab, Zhejiang University</strong></p>
+    <p class="entity-meta"><em>2025.12 - Present, Research Intern, Remote</em></p>
+    <p>Research topics: 3D world models, text-to-3D generation, efficient generative modeling.</p>
+    <p>Current work: leading a 3D generation project and taking responsibility for algorithm design, implementation, data processing, model training, and evaluation.</p>
+  </div>
+</div>
 
-Example: editing a Markdown file for a talk
-![Editing a Markdown file for a talk](/images/editing-talk.png)
+<div class="entity-card">
+  <div class="entity-logo">3D</div>
+  <div>
+    <p class="entity-title"><strong>Block3D: Efficient Text-to-3D Generation through Block-wise Diffusion</strong></p>
+    <p class="entity-meta"><em>2025.12 - Present, Main Contributor</em></p>
+    <p>Explores a block-wise diffusion paradigm for text-to-3D generation to reduce global denoising cost and improve generation efficiency.</p>
+    <p>Designed an iterative refinement strategy that allows generated regions to be revised through confidence-based feedback, targeting more stable geometry and faster generation.</p>
+  </div>
+</div>
 
-For more info
-------
-More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/), the [growing wiki](https://github.com/academicpages/academicpages.github.io/wiki), and you can always [ask a question on GitHub](https://github.com/academicpages/academicpages.github.io/discussions). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+<div class="entity-card">
+  <div class="entity-logo">PC</div>
+  <div>
+    <p class="entity-title"><strong>PointSA: Self-Supervised Point Cloud Segmentation via Slot Attention</strong></p>
+    <p class="entity-meta"><em>2025.08 - 2025.12, Main Contributor, Xi'an Jiaotong University</em></p>
+    <p>Introduced Slot Attention into self-supervised point cloud segmentation so that each slot can capture object-level structure.</p>
+    <p>Built a refinement pipeline for boundary quality and addressed slot collapse caused by large, simple backgrounds through background separation and feature upsampling.</p>
+  </div>
+</div>
+
+<span class="anchor" id="honors"></span>
+
+# Honors and Awards
+
+<ul class="award-list">
+  <li><em>2025</em> <strong>National Second Prize, Team Leader</strong>, China Robotics Competition and RoboCup China, Underwater Robot - Water Cruise track.</li>
+  <li><em>2024</em> <strong>National Second Prize</strong>, China Robotics Competition and RoboCup China, Underwater Robot - Water Cruise track.</li>
+  <li><em>2024</em> <strong>National Third Prize</strong>, China Robotics Competition and RoboCup China, Automatic Sorting Robot track.</li>
+</ul>
+
+<span class="anchor" id="education"></span>
+
+# Education
+
+<div class="entity-card">
+  <div class="entity-logo">XJTU</div>
+  <div>
+    <p class="entity-title"><strong>Xi'an Jiaotong University</strong></p>
+    <p class="entity-meta"><em>2023.08 - 2027.06 expected, Xi'an, China</em></p>
+    <p><strong>B.Eng. in Intelligent Manufacturing Engineering (Qian Xuesen Honors Class) / Computer Science and Technology</strong></p>
+    <p>GPA: 87.97 / 100. Ranking: 11 / 29 in the Qian Xuesen Honors Class.</p>
+  </div>
+</div>
+
+<span class="anchor" id="skills"></span>
+
+# Skills
+
+<div class="skill-grid">
+  <div>
+    <strong>Research</strong>
+    <p>World models, 3D generation, video generation, point cloud segmentation, robotic perception.</p>
+  </div>
+  <div>
+    <strong>Tools</strong>
+    <p>PyTorch, NumPy, OpenCV.</p>
+  </div>
+  <div>
+    <strong>Robotics</strong>
+    <p>AUV control, lightweight underwater object detection, visual perception, path planning.</p>
+  </div>
+</div>
+
+<hr>
+
+<p class="homepage-footer"><i>Latest updated in Apr. 2026</i></p>
+<p class="homepage-footer">© Bowen Cui</p>
