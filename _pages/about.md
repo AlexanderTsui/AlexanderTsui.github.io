@@ -23,9 +23,9 @@ I am currently a remote research intern at **CAD&CG Lab / ZIP Lab, Zhejiang Univ
 
 <ul class="home-news">
   <li><em>2025.12</em>: Joined <strong>Zhejiang University CAD&amp;CG Lab / ZIP Lab</strong> as a remote research intern, focusing on 3D world models and text-to-3D generation.</li>
-  <li><em>2025.10</em>: Led the team to a <strong>National Second Prize</strong> in the 2025 China Robotics Competition and RoboCup China, Underwater Robot Water Cruise track.</li>
+  <li><em>2025.10</em>: Led the team to a <strong>National Second Prize</strong> in the 2025 China Robot Competition &amp; RoboCup China, Underwater Robot Water Cruise track.</li>
   <li><em>2025.08</em>: Started <strong>PointSA</strong>, a self-supervised point cloud segmentation project based on Slot Attention.</li>
-  <li><em>2024.11</em>: Won a <strong>National Second Prize</strong> in the 2024 China Robotics Competition and RoboCup China, Underwater Robot Water Cruise track.</li>
+  <li><em>2024.11</em>: Won a <strong>National Second Prize</strong> in the 2024 China Robot Competition &amp; RoboCup China, Underwater Robot Water Cruise track.</li>
 </ul>
 
 <span class="anchor" id="research"></span>
@@ -73,9 +73,9 @@ I am currently a remote research intern at **CAD&CG Lab / ZIP Lab, Zhejiang Univ
 # Honors and Awards
 
 <ul class="award-list">
-  <li><em>2025</em> <strong>National Second Prize, Team Leader</strong>, China Robotics Competition and RoboCup China, Underwater Robot - Water Cruise track.</li>
-  <li><em>2024</em> <strong>National Second Prize</strong>, China Robotics Competition and RoboCup China, Underwater Robot - Water Cruise track.</li>
-  <li><em>2024</em> <strong>National Third Prize</strong>, China Robotics Competition and RoboCup China, Automatic Sorting Robot track.</li>
+  <li><em>2025</em> <strong>National Second Prize, Team Leader</strong>, China Robot Competition &amp; RoboCup China, Underwater Robot - Water Cruise track.</li>
+  <li><em>2024</em> <strong>National Second Prize</strong>, China Robot Competition &amp; RoboCup China, Underwater Robot - Water Cruise track.</li>
+  <li><em>2024</em> <strong>National Third Prize</strong>, China Robot Competition &amp; RoboCup China, Automatic Sorting Robot track.</li>
 </ul>
 
 <span class="anchor" id="education"></span>
