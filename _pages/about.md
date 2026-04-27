@@ -57,7 +57,9 @@ I am currently a remote research intern at **CAD&CG Lab / ZIP Lab, Zhejiang Univ
 # Intern Experience
 
 <div class="entity-card">
-  <div class="entity-logo">ZJU</div>
+  <div class="entity-logo entity-logo--image">
+    <img src="/images/zju.png" alt="Zhejiang University logo">
+  </div>
   <div>
     <p class="entity-title"><strong>CAD&amp;CG Lab / ZIP Lab, Zhejiang University</strong></p>
     <p class="entity-meta"><em>2025.12 - Present, Research Intern, Remote</em></p>
@@ -81,7 +83,9 @@ I am currently a remote research intern at **CAD&CG Lab / ZIP Lab, Zhejiang Univ
 # Education
 
 <div class="entity-card">
-  <div class="entity-logo">XJTU</div>
+  <div class="entity-logo entity-logo--image">
+    <img src="/images/xjtu.png" alt="Xi'an Jiaotong University logo">
+  </div>
   <div>
     <p class="entity-title"><strong>Xi'an Jiaotong University</strong></p>
     <p class="entity-meta"><em>2023.08 - 2027.06 expected, Xi'an, China</em></p>

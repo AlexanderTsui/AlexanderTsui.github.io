@@ -23,7 +23,7 @@ repository               : "AlexanderTsui/AlexanderTsui.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "avatar.svg"
+  avatar           : "profile.jpg"
   name             : "Bowen Cui"
   pronouns         : # example: "she/her"  
   bio              : "Undergraduate @ Xi'an Jiaotong University"
