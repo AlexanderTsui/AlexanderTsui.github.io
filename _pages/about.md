@@ -33,16 +33,6 @@ I am currently a remote research intern at **CAD&CG Lab / ZIP Lab, Zhejiang Univ
 # Research Projects
 
 <div class="entity-card">
-  <div class="entity-logo">3D</div>
-  <div>
-    <p class="entity-title"><strong>Block3D: Efficient Text-to-3D Generation through Block-wise Diffusion</strong></p>
-    <p class="entity-meta"><em>2025.12 - Present, Main Contributor</em></p>
-    <p>Explores a block-wise diffusion paradigm for text-to-3D generation to reduce global denoising cost and improve generation efficiency.</p>
-    <p>Designed an iterative refinement strategy that allows generated regions to be revised through confidence-based feedback, targeting more stable geometry and faster generation.</p>
-  </div>
-</div>
-
-<div class="entity-card">
   <div class="entity-logo">PC</div>
   <div>
     <p class="entity-title"><strong>PointSA: Self-Supervised Point Cloud Segmentation via Slot Attention</strong></p>
