@@ -76,9 +76,11 @@ h3 { font-size: 21px; line-height: 1.25; letter-spacing: 0; }
   align-items: center;
   justify-content: space-between;
   padding: 0 max(28px, calc((100vw - var(--shell)) / 2));
-  color: white;
-  background: rgba(12, 16, 15, .12);
-  border-bottom: 1px solid rgba(255, 255, 255, .22);
+  color: var(--ink);
+  background: rgba(255, 255, 255, .94);
+  border-bottom: 1px solid rgba(16, 20, 19, .12);
+  box-shadow: 0 8px 28px rgba(14, 20, 17, .08);
+  backdrop-filter: blur(12px);
   transition: background .25s, box-shadow .25s;
 }
 .site-header.is-scrolled {
