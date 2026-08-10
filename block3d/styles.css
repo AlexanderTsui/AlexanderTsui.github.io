@@ -76,11 +76,9 @@ h3 { font-size: 21px; line-height: 1.25; letter-spacing: 0; }
   align-items: center;
   justify-content: space-between;
   padding: 0 max(28px, calc((100vw - var(--shell)) / 2));
-  color: var(--ink);
-  background: rgba(255, 255, 255, .94);
-  border-bottom: 1px solid rgba(16, 20, 19, .12);
-  box-shadow: 0 8px 28px rgba(14, 20, 17, .08);
-  backdrop-filter: blur(12px);
+  color: white;
+  background: rgba(12, 16, 15, .12);
+  border-bottom: 1px solid rgba(255, 255, 255, .22);
   transition: background .25s, box-shadow .25s;
 }
 .site-header.is-scrolled {
@@ -163,20 +161,11 @@ h3 { font-size: 21px; line-height: 1.25; letter-spacing: 0; }
 .button-outline:hover { background: rgba(255,255,255,.12); }
 .button-disabled { color: rgba(255,255,255,.55); border-color: rgba(255,255,255,.25); cursor: not-allowed; }
 .button-disabled small { font-size: 9px; font-family: "DM Mono", monospace; text-transform: uppercase; }
-.button-dark { color: white; background: var(--ink); }
-.button-dark:hover { background: var(--green-deep); }
 .scroll-cue { position: absolute; z-index: 2; right: max(28px, calc((100vw - var(--shell)) / 2)); bottom: 35px; width: 32px; height: 48px; border: 1px solid rgba(255,255,255,.55); border-radius: 20px; }
 .scroll-cue span { position: absolute; top: 10px; left: 50%; width: 3px; height: 8px; transform: translateX(-50%); background: white; border-radius: 4px; animation: scrollcue 2s infinite; }
 @keyframes scrollcue { 0%, 100% { transform: translate(-50%, 0); opacity: .4; } 50% { transform: translate(-50%, 14px); opacity: 1; } }
 
 .metric-band { color: white; background: var(--ink); }
-.video-feature { padding: 72px 0; background: #f2f4f2; border-bottom: 1px solid var(--line); }
-.video-feature-layout { display: grid; grid-template-columns: .66fr 1.34fr; gap: 64px; align-items: center; }
-.video-feature-copy h2 { margin-bottom: 18px; font-size: clamp(34px, 4.4vw, 58px); }
-.video-feature-copy > p:not(.eyebrow) { max-width: 470px; color: var(--muted); }
-.video-feature-player { position: relative; overflow: hidden; background: #0d100f; box-shadow: 0 22px 52px rgba(16,20,19,.17); }
-.video-feature-player::before { content: "PLAY THE DEMO"; position: absolute; z-index: 1; top: 12px; left: 12px; padding: 5px 8px; color: white; background: rgba(10,12,11,.7); font-family: "DM Mono", monospace; font-size: 9px; }
-.video-feature-player video { width: 100%; aspect-ratio: 16 / 9; background: #0d100f; }
 .metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
 .metric { min-height: 190px; padding: 38px 28px 30px; border-left: 1px solid rgba(255,255,255,.13); }
 .metric:last-child { border-right: 1px solid rgba(255,255,255,.13); }
@@ -302,7 +291,6 @@ h3 { font-size: 21px; line-height: 1.25; letter-spacing: 0; }
   .metric:nth-child(2) { border-right: 1px solid rgba(255,255,255,.13); }
   .metric:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.13); }
   .intro-grid, .method-layout, .video-layout, .citation-layout { grid-template-columns: 1fr; gap: 48px; }
-  .video-feature-layout { grid-template-columns: 1fr; gap: 34px; }
   .intro-copy { padding-top: 0; }
   .method-layout { gap: 36px; }
   .method-steps { display: grid; grid-template-columns: 1fr 1fr; }
@@ -347,8 +335,6 @@ h3 { font-size: 21px; line-height: 1.25; letter-spacing: 0; }
   .metric strong { font-size: 33px; }
   .metric p { font-size: 11px; }
   .intro-grid { gap: 20px; }
-  .video-feature { padding: 58px 0; }
-  .video-feature-layout { gap: 26px; }
   .lead { font-size: 19px; }
   .heading-row { align-items: start; flex-direction: column; gap: 22px; }
   .section-heading { margin-bottom: 36px; }
