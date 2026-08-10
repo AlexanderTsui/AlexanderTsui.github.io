@@ -193,6 +193,7 @@ let isLoading = false;
 let autoRotate = true;
 let wireframe = false;
 let resizeObserver;
+let meshFloor;
 
 const dracoLoader = new DRACOLoader();
 dracoLoader.setDecoderPath("https://www.gstatic.com/draco/versioned/decoders/1.5.7/");
@@ -241,14 +242,14 @@ function initMeshViewer() {
   rimLight.position.set(-5, 2, -4);
   scene.add(rimLight);
 
-  const floor = new THREE.Mesh(
+  meshFloor = new THREE.Mesh(
     new THREE.CircleGeometry(3.1, 72),
     new THREE.MeshStandardMaterial({ color: 0x151b18, roughness: .92, metalness: 0 })
   );
-  floor.rotation.x = -Math.PI / 2;
-  floor.position.y = -1.28;
-  floor.receiveShadow = true;
-  scene.add(floor);
+  meshFloor.rotation.x = -Math.PI / 2;
+  meshFloor.position.y = -1.28;
+  meshFloor.receiveShadow = true;
+  scene.add(meshFloor);
 
   resizeObserver = new ResizeObserver(resizeMeshViewer);
   resizeObserver.observe(meshStage);
@@ -322,7 +323,7 @@ async function loadSelectedModel() {
       child.castShadow = true;
       child.receiveShadow = true;
       child.material = new THREE.MeshStandardMaterial({
-        color: 0xb9c9c0,
+        color: new THREE.Color(button.dataset.color || "#b9c9c0"),
         roughness: .56,
         metalness: .06,
         side: THREE.DoubleSide,
@@ -340,6 +341,9 @@ async function loadSelectedModel() {
     activeModel.position.sub(center);
     activeModel.rotation.y = -0.35;
     scene.add(activeModel);
+
+    const centeredBounds = new THREE.Box3().setFromObject(activeModel);
+    meshFloor.position.y = centeredBounds.min.y - 0.04;
 
     meshPoster.hidden = true;
     meshLoadButton.hidden = true;
