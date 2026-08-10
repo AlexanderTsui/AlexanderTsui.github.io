@@ -4,248 +4,271 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Block3D: Efficient Text-to-3D Generation via Block-Wise Diffusion.">
-  <meta name="theme-color" content="#101413">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='10' y='18' width='34' height='34' fill='%2372b54a'/%3E%3Crect x='25' y='7' width='29' height='29' fill='%2398d675' fill-opacity='.72'/%3E%3C/svg%3E">
+  <meta name="theme-color" content="#090b0a">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='10' y='18' width='34' height='34' fill='%2377d3a8'/%3E%3Crect x='25' y='7' width='29' height='29' fill='%23f08869' fill-opacity='.86'/%3E%3C/svg%3E">
   <title>Block3D | Efficient Text-to-3D Generation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.166.1/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.166.1/examples/jsm/"
+    }
+  }
+  </script>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+  <script type="module" src="script.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header" data-header>
-    <a class="wordmark" href="#top" aria-label="Block3D home">
-      <span class="wordmark-cube" aria-hidden="true"></span>
-      Block3D
-    </a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-      <a href="#overview">Overview</a>
-      <a href="#method">Method</a>
-      <a href="#results">Results</a>
-      <a href="#video">Video</a>
-      <a href="#citation">Citation</a>
-    </nav>
+    <div class="nav-inner">
+      <a class="wordmark" href="#top" aria-label="Block3D home">
+        <span class="cube-mark" aria-hidden="true"><span></span></span>
+        Block3D
+      </a>
+      <button class="icon-button nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation" title="Open navigation">
+        <i data-lucide="menu" aria-hidden="true"></i>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="#video">Video</a>
+        <a href="#abstract">Abstract</a>
+        <a href="#mesh-results">3D Results</a>
+        <a href="#comparisons">Comparisons</a>
+        <a href="#method">Method</a>
+        <a href="#citation">Citation</a>
+      </nav>
+    </div>
   </header>
 
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">
-      <img class="hero-image" src="assets/images/arena_views.jpg" alt="Four rendered views of an arena assembled from Block3D generated assets">
-      <div class="hero-shade"></div>
+      <img class="hero-backdrop" src="assets/images/arena_views.jpg" alt="Block3D generated assets assembled into a gladiator arena">
+      <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-content">
-        <p class="eyebrow hero-eyebrow">Efficient text-to-3D generation</p>
-        <h1 id="hero-title">Block3D</h1>
-        <p class="hero-subtitle">Efficient Text-to-3D Generation<br>via Block-Wise Diffusion</p>
+        <p class="venue-badge">AAAI 2027 Submission</p>
+        <h1 id="hero-title"><span>Block3D</span> Efficient Text-to-3D Generation via Block-Wise Diffusion</h1>
         <p class="hero-authors">Anonymous Authors</p>
-        <p class="hero-meta">AAAI 2027 Submission <span aria-hidden="true">/</span> ZIP Lab</p>
-        <div class="hero-actions" aria-label="Project resources">
-          <a class="button button-light" href="assets/papers/block3d.pdf" target="_blank" rel="noreferrer">Paper <span aria-hidden="true">&#8599;</span></a>
-          <a class="button button-light" href="assets/papers/block3d_supplement.pdf" target="_blank" rel="noreferrer">Supplement <span aria-hidden="true">&#8599;</span></a>
-          <a class="button button-outline" href="#video">Video <span aria-hidden="true">&#8595;</span></a>
-          <span class="button button-disabled" aria-label="Code coming soon">Code <small>Coming soon</small></span>
-          <span class="button button-disabled" aria-label="Model weights coming soon">Weights <small>Coming soon</small></span>
+        <p class="hero-affiliations">ZIP Lab &nbsp;&middot;&nbsp; Zhejiang University &nbsp;&middot;&nbsp; Monash University</p>
+        <div class="resource-row" aria-label="Project resources">
+          <a class="resource-button resource-primary" href="assets/papers/block3d.pdf" target="_blank" rel="noreferrer">
+            <i data-lucide="file-text" aria-hidden="true"></i><span>Paper</span>
+          </a>
+          <a class="resource-button" href="assets/papers/block3d_supplement.pdf" target="_blank" rel="noreferrer">
+            <i data-lucide="files" aria-hidden="true"></i><span>Supplement</span>
+          </a>
+          <a class="resource-button" href="#video">
+            <i data-lucide="film" aria-hidden="true"></i><span>Video</span>
+          </a>
+          <span class="resource-button resource-pending" aria-label="Code coming soon">
+            <i data-lucide="github" aria-hidden="true"></i><span>Code</span><small>Coming soon</small>
+          </span>
+          <span class="resource-button resource-pending" aria-label="Model weights coming soon">
+            <i data-lucide="box" aria-hidden="true"></i><span>Weights</span><small>Coming soon</small>
+          </span>
         </div>
       </div>
-      <a class="scroll-cue" href="#overview" aria-label="Scroll to overview"><span></span></a>
     </section>
 
-    <section class="section section-dark" id="video">
-      <div class="shell video-layout">
-        <div class="video-copy">
-          <p class="eyebrow">Supplementary video</p>
-          <h2>Block3D in 72 seconds</h2>
-          <p>See the block-causal decoding process, confidence-guided correction, and qualitative comparisons in motion.</p>
-          <div class="video-chapters" aria-label="Video chapters">
-            <button class="chapter is-active" type="button" data-time="3"><img src="assets/video/frame_03.jpg" alt=""><span><b>00:03</b> Overview</span></button>
-            <button class="chapter" type="button" data-time="17"><img src="assets/video/frame_17.jpg" alt=""><span><b>00:17</b> Block-causal decoding</span></button>
-            <button class="chapter" type="button" data-time="32"><img src="assets/video/frame_32.jpg" alt=""><span><b>00:32</b> Confidence correction</span></button>
-            <button class="chapter" type="button" data-time="47"><img src="assets/video/frame_47.jpg" alt=""><span><b>00:47</b> Comparisons</span></button>
-            <button class="chapter" type="button" data-time="55"><img src="assets/video/frame_55.jpg" alt=""><span><b>00:55</b> More results</span></button>
-          </div>
+    <section class="section video-section" id="video">
+      <div class="section-inner wide">
+        <div class="section-heading centered">
+          <p class="section-label">Video</p>
+          <h2>Block3D in motion</h2>
         </div>
-        <div class="video-player-wrap">
+        <div class="video-frame">
           <video id="project-video" controls preload="metadata" playsinline poster="assets/video/frame_03.jpg">
             <source src="https://github.com/AlexanderTsui/AlexanderTsui.github.io/releases/download/block3d-project-page-assets-v1/block3d_supplementary.mp4" type="video/mp4">
             Your browser does not support the video element.
           </video>
         </div>
-      </div>
-    </section>
-
-    <section class="metric-band" aria-label="Key results">
-      <div class="metric-grid shell">
-        <div class="metric">
-          <strong>5.15<span>&times;</span></strong>
-          <p>faster than the fine-tuned autoregressive baseline</p>
-        </div>
-        <div class="metric">
-          <strong>4.99<span>s</span></strong>
-          <p>mean end-to-end generation time on one A100</p>
-        </div>
-        <div class="metric">
-          <strong>0.309</strong>
-          <p>F-score at 1% on held-out TRELLIS-500K objects</p>
-        </div>
-        <div class="metric">
-          <strong>0.668</strong>
-          <p>normal consistency under paired geometry evaluation</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-intro" id="overview">
-      <div class="shell intro-grid">
-        <div>
-          <p class="eyebrow">In one sentence</p>
-          <h2>Generate by blocks.<br>Correct before committing.</h2>
-        </div>
-        <div class="intro-copy">
-          <p class="lead">Block3D shifts causal dependency from individual shape tokens to contiguous latent blocks, then denoises every token inside the active block in parallel.</p>
-          <p>Confidence-guided intra-block correction revisits uncertain predictions before a block is finalized. The result is a practical quality-speed balance: fewer sequential stages without the repeated full-representation updates of conventional diffusion.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-muted" id="method">
-      <div class="shell">
-        <div class="section-heading heading-row">
-          <div>
-            <p class="eyebrow">Method</p>
-            <h2>Block-wise diffusion</h2>
-          </div>
-          <div class="segmented" role="tablist" aria-label="Method figures">
-            <button class="segment is-active" type="button" role="tab" aria-selected="true" data-method="concept">Concept</button>
-            <button class="segment" type="button" role="tab" aria-selected="false" data-method="pipeline">Pipeline</button>
-          </div>
-        </div>
-
-        <div class="method-layout">
-          <div class="method-figure">
-            <button class="zoomable" type="button" data-zoom-src="assets/images/concept.png" data-zoom-alt="Conceptual comparison between autoregressive, diffusion, and Block3D generation">
-              <img id="method-image" src="assets/images/concept.png" alt="Conceptual comparison between autoregressive, diffusion, and Block3D generation">
-              <span class="zoom-hint">View full size</span>
-            </button>
-            <p id="method-caption" class="figure-caption">Block3D retains causal structure across blocks while enabling parallel, bidirectional denoising within each block.</p>
-          </div>
-
-          <ol class="method-steps">
-            <li>
-              <span>01</span>
-              <div><h3>Partition</h3><p>A 1,024-token discrete shape sequence is divided into contiguous blocks.</p></div>
-            </li>
-            <li>
-              <span>02</span>
-              <div><h3>Denoise in parallel</h3><p>Blocks are generated left to right, while all tokens in the current block update jointly.</p></div>
-            </li>
-            <li>
-              <span>03</span>
-              <div><h3>Correct by confidence</h3><p>Low-confidence visible tokens can be revised alongside masked positions before finalization.</p></div>
-            </li>
-            <li>
-              <span>04</span>
-              <div><h3>Decode</h3><p>The completed code sequence is passed through the frozen shape decoder to produce a mesh.</p></div>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <section class="section results-section" id="results">
-      <div class="shell">
-        <div class="section-heading">
-          <p class="eyebrow">Qualitative comparison</p>
-          <h2>One prompt, five generators</h2>
-          <p>Switch between prompts to compare front and back views under the same camera and normalization. Block3D preserves fine semantic structure while reducing decoding time.</p>
-        </div>
-
-        <div class="prompt-tabs" role="tablist" aria-label="Qualitative examples">
-          <button class="prompt-tab is-active" type="button" role="tab" aria-selected="true" data-example="knight"><span>01</span>Knight</button>
-          <button class="prompt-tab" type="button" role="tab" aria-selected="false" data-example="dog"><span>02</span>Dog</button>
-          <button class="prompt-tab" type="button" role="tab" aria-selected="false" data-example="buddha"><span>03</span>Buddha</button>
-          <button class="prompt-tab" type="button" role="tab" aria-selected="false" data-example="gazebo"><span>04</span>Gazebo</button>
-          <button class="prompt-tab" type="button" role="tab" aria-selected="false" data-example="shoe"><span>05</span>Shoe</button>
-        </div>
-
-        <div class="comparison-view">
-          <p class="prompt-label">Text prompt</p>
-          <blockquote id="comparison-prompt">A stylized knight character with a hexagonal helmet with a horizontal eye slit, rigid armor plates, a rectangular shield, and a sword arranged in a combat-ready pose.</blockquote>
-          <div class="comparison-crop">
-            <div class="comparison-track">
-              <button class="zoomable comparison-zoom" type="button" data-zoom-src="assets/images/comparison_knight_results.jpg" data-zoom-alt="Qualitative comparison for the knight prompt">
-                <img id="comparison-image" src="assets/images/comparison_knight_results.jpg" alt="Qualitative comparison for the knight prompt">
-                <span class="zoom-hint">View full size</span>
-              </button>
-              <div class="method-labels" aria-hidden="true">
-                <span>Cube</span><span>LLaDA</span><span>SLATFlow</span><span>PartDiffuser</span><span class="ours">Block3D</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section gallery-section" id="gallery">
-      <div class="shell">
-        <div class="section-heading heading-row">
-          <div>
-            <p class="eyebrow">Generated assets</p>
-            <h2>From isolated shapes to a scene</h2>
-          </div>
-          <p>Forty-two unique Block3D components are assembled into the arena using a shared Blender scene, camera, and lighting setup.</p>
-        </div>
-      </div>
-      <div class="wide-gallery">
-        <button class="gallery-item gallery-arena zoomable" type="button" data-zoom-src="assets/images/arena_views.jpg" data-zoom-alt="Four views of the assembled Block3D arena">
-          <img src="assets/images/arena_views.jpg" alt="Four views of the assembled Block3D arena" loading="lazy">
-          <span>Assembled arena <small>4 viewpoints</small></span>
-        </button>
-        <button class="gallery-item gallery-assets zoomable" type="button" data-zoom-src="assets/images/asset_inventory.jpg" data-zoom-alt="Inventory of Block3D generated assets">
-          <img src="assets/images/asset_inventory.jpg" alt="Inventory of Block3D generated assets" loading="lazy">
-          <span>Asset inventory <small>42 components</small></span>
-        </button>
-      </div>
-      <div class="shell extra-results">
-        <div class="extra-result">
-          <div>
-            <p class="eyebrow">More generations</p>
-            <h3>Nine additional text-to-shape results</h3>
-            <p>Each group shows multiple viewpoints of one generated mesh. Click the figure to inspect it at full resolution.</p>
-          </div>
-          <button class="zoomable" type="button" data-zoom-src="assets/images/additional_results.png" data-zoom-alt="Nine additional Block3D text-to-shape examples">
-            <img src="assets/images/additional_results.png" alt="Nine additional Block3D text-to-shape examples">
-            <span class="zoom-hint">View full size</span>
+        <div class="chapter-row" aria-label="Video chapters">
+          <button class="chapter is-active" type="button" data-time="3">
+            <img src="assets/video/frame_03.jpg" alt=""><span><strong>00:03</strong> Overview</span>
+          </button>
+          <button class="chapter" type="button" data-time="17">
+            <img src="assets/video/frame_17.jpg" alt=""><span><strong>00:17</strong> Block-causal decoding</span>
+          </button>
+          <button class="chapter" type="button" data-time="32">
+            <img src="assets/video/frame_32.jpg" alt=""><span><strong>00:32</strong> Confidence correction</span>
+          </button>
+          <button class="chapter" type="button" data-time="47">
+            <img src="assets/video/frame_47.jpg" alt=""><span><strong>00:47</strong> Comparisons</span>
+          </button>
+          <button class="chapter" type="button" data-time="55">
+            <img src="assets/video/frame_55.jpg" alt=""><span><strong>00:55</strong> More results</span>
           </button>
         </div>
       </div>
     </section>
 
     <section class="section abstract-section" id="abstract">
-      <div class="shell narrow">
-        <p class="eyebrow">Abstract</p>
-        <h2>A faster route to high-fidelity geometry</h2>
-        <p>While text-to-3D generation has advanced rapidly, achieving high geometric fidelity at low inference cost remains challenging. Existing methods either decode discrete shape tokens autoregressively or iteratively refine global 3D representations with diffusion or flow models. Autoregressive decoding is sequential and cannot revise errors, whereas diffusion and flow-matching models repeatedly process the full representation.</p>
-        <p>We propose Block3D, a block-wise diffusion framework that partitions the discrete shape-token sequence into contiguous blocks, generates the blocks autoregressively, and jointly denoises all tokens within the current block. Confidence-guided intra-block correction revises low-confidence tokens before each block is finalized. On a held-out set from TRELLIS-500K, Block3D reduces mean end-to-end generation time from 25.71 seconds to 4.99 seconds, achieving a 5.15&times; speedup over the fine-tuned autoregressive baseline without sacrificing geometric fidelity.</p>
+      <div class="section-inner reading-width">
+        <p class="section-label">Abstract</p>
+        <h2>Fast generation without giving up correction</h2>
+        <p class="abstract-copy">While text-to-3D generation has advanced rapidly, achieving high geometric fidelity at low inference cost remains challenging. Existing methods either decode discrete shape tokens autoregressively or iteratively refine global 3D representations with diffusion or flow models. Autoregressive decoding is sequential and cannot revise errors, whereas diffusion and flow-matching models repeatedly process the full representation.</p>
+        <p class="abstract-copy">We propose <strong>Block3D</strong>, a block-wise diffusion framework that partitions the discrete shape-token sequence into contiguous blocks, generates the blocks autoregressively, and jointly denoises all tokens within the current block. Confidence-guided intra-block correction revises low-confidence tokens before each block is finalized. On a held-out set from TRELLIS-500K, Block3D reduces mean end-to-end generation time from 25.71 seconds to 4.99 seconds, achieving a 5.15&times; speedup over the fine-tuned autoregressive baseline without sacrificing geometric fidelity.</p>
+      </div>
+      <div class="metric-strip section-inner wide" aria-label="Key results">
+        <div><strong>5.15&times;</strong><span>faster than AR</span></div>
+        <div><strong>4.99 s</strong><span>end-to-end generation</span></div>
+        <div><strong>0.309</strong><span>F-score at 1%</span></div>
+        <div><strong>0.668</strong><span>normal consistency</span></div>
+      </div>
+    </section>
+
+    <section class="section mesh-section" id="mesh-results">
+      <div class="section-inner wide">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="section-label">Interactive 3D Results</p>
+            <h2>Generated meshes, up close</h2>
+          </div>
+          <p>Selected Block3D components from the assembled arena. Each asset is rendered directly from the generated geometry.</p>
+        </div>
+
+        <div class="mesh-tool" data-mesh-tool>
+          <div class="mesh-toolbar">
+            <div>
+              <p class="mesh-kicker">Selected asset</p>
+              <h3 id="mesh-title">Arena guardian</h3>
+            </div>
+            <div class="mesh-actions">
+              <div class="mode-switch" role="group" aria-label="Mesh rendering mode">
+                <button class="mode-button is-active" type="button" data-view-mode="solid" aria-pressed="true">Solid</button>
+                <button class="mode-button" type="button" data-view-mode="wireframe" aria-pressed="false">Wireframe</button>
+              </div>
+              <button class="icon-button" type="button" data-auto-rotate aria-pressed="true" aria-label="Pause automatic rotation" title="Pause automatic rotation">
+                <i data-lucide="pause" aria-hidden="true"></i>
+              </button>
+              <button class="icon-button" type="button" data-reset-camera aria-label="Reset camera" title="Reset camera">
+                <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="mesh-stage" id="mesh-stage">
+            <img class="mesh-poster" id="mesh-poster" src="assets/models/knight.jpg" alt="Preview of the arena guardian mesh">
+            <button class="mesh-load-button" type="button" data-load-mesh>
+              <i data-lucide="box" aria-hidden="true"></i><span>Load 3D</span>
+            </button>
+            <div class="mesh-status" data-mesh-status aria-live="polite"></div>
+          </div>
+
+          <div class="mesh-selector" role="tablist" aria-label="Generated meshes">
+            <button class="mesh-option is-active" type="button" role="tab" aria-selected="true" data-model="knight" data-src="assets/models/knight.glb" data-poster="assets/models/knight.jpg" data-title="Arena guardian">
+              <img src="assets/models/knight.jpg" alt=""><span>Arena guardian</span>
+            </button>
+            <button class="mesh-option" type="button" role="tab" aria-selected="false" data-model="stump" data-src="assets/models/stump.glb" data-poster="assets/models/stump.jpg" data-title="Ancient stump">
+              <img src="assets/models/stump.jpg" alt=""><span>Ancient stump</span>
+            </button>
+            <button class="mesh-option" type="button" role="tab" aria-selected="false" data-model="cabinet" data-src="assets/models/cabinet.glb" data-poster="assets/models/cabinet.jpg" data-title="Supply cabinet">
+              <img src="assets/models/cabinet.jpg" alt=""><span>Supply cabinet</span>
+            </button>
+            <button class="mesh-option" type="button" role="tab" aria-selected="false" data-model="canopy" data-src="assets/models/canopy.glb" data-poster="assets/models/canopy.jpg" data-title="Torn canopy">
+              <img src="assets/models/canopy.jpg" alt=""><span>Torn canopy</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section comparisons-section" id="comparisons">
+      <div class="section-inner wide">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="section-label">Comparisons</p>
+            <h2>Quality across prompts</h2>
+          </div>
+          <p>Front and back views use the same camera and normalization for every method.</p>
+        </div>
+
+        <div class="prompt-tabs" role="tablist" aria-label="Qualitative examples">
+          <button class="prompt-tab is-active" type="button" role="tab" aria-selected="true" data-example="knight">Knight</button>
+          <button class="prompt-tab" type="button" role="tab" aria-selected="false" data-example="dog">Dog</button>
+          <button class="prompt-tab" type="button" role="tab" aria-selected="false" data-example="buddha">Buddha</button>
+          <button class="prompt-tab" type="button" role="tab" aria-selected="false" data-example="gazebo">Gazebo</button>
+          <button class="prompt-tab" type="button" role="tab" aria-selected="false" data-example="shoe">Shoe</button>
+        </div>
+        <blockquote id="comparison-prompt">A stylized knight character with a hexagonal helmet, rigid armor plates, a rectangular shield, and a sword arranged in a combat-ready pose.</blockquote>
+        <button class="figure-button comparison-figure" type="button" data-zoom-src="assets/images/comparison_knight_results.jpg" data-zoom-alt="Qualitative comparison for the knight prompt">
+          <img id="comparison-image" src="assets/images/comparison_knight_results.jpg" alt="Qualitative comparison for the knight prompt">
+          <span class="figure-expand"><i data-lucide="maximize-2" aria-hidden="true"></i><span class="sr-only">Open full-size comparison</span></span>
+        </button>
+        <div class="method-key" aria-hidden="true">
+          <span>Cube</span><span>LLaDA</span><span>SLATFlow</span><span>PartDiffuser</span><span class="ours">Block3D</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section method-section" id="method">
+      <div class="section-inner wide">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="section-label">Method</p>
+            <h2>Block-wise diffusion</h2>
+          </div>
+          <div class="mode-switch" role="tablist" aria-label="Method figures">
+            <button class="mode-button is-active" type="button" role="tab" aria-selected="true" data-method="concept">Concept</button>
+            <button class="mode-button" type="button" role="tab" aria-selected="false" data-method="pipeline">Pipeline</button>
+          </div>
+        </div>
+        <button class="figure-button method-figure" type="button" data-zoom-src="assets/images/concept.png" data-zoom-alt="Conceptual comparison between autoregressive generation, diffusion, and Block3D">
+          <img id="method-image" src="assets/images/concept.png" alt="Conceptual comparison between autoregressive generation, diffusion, and Block3D">
+          <span class="figure-expand"><i data-lucide="maximize-2" aria-hidden="true"></i><span class="sr-only">Open full-size method figure</span></span>
+        </button>
+        <p class="figure-caption" id="method-caption">Block3D retains causal structure across blocks while enabling parallel, bidirectional denoising within each active block.</p>
+
+        <div class="method-steps">
+          <article><span>01</span><h3>Partition</h3><p>Divide the 1,024-token shape sequence into contiguous blocks.</p></article>
+          <article><span>02</span><h3>Denoise</h3><p>Update every token in the active block jointly and in parallel.</p></article>
+          <article><span>03</span><h3>Correct</h3><p>Revise low-confidence tokens before committing the current block.</p></article>
+          <article><span>04</span><h3>Decode</h3><p>Pass the completed sequence through the frozen shape decoder.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery-section" id="gallery">
+      <div class="section-inner wide">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="section-label">More Results</p>
+            <h2>From assets to a scene</h2>
+          </div>
+          <p>Independently generated components are composed with shared lighting and cameras.</p>
+        </div>
+        <div class="gallery-grid">
+          <button class="figure-button gallery-arena" type="button" data-zoom-src="assets/images/arena_views.jpg" data-zoom-alt="Four viewpoints of the assembled Block3D arena">
+            <img src="assets/images/arena_views.jpg" alt="Four viewpoints of the assembled Block3D arena" loading="lazy">
+            <span class="figure-label"><strong>Assembled arena</strong><small>Four viewpoints</small></span>
+          </button>
+          <button class="figure-button gallery-additional" type="button" data-zoom-src="assets/images/additional_results.png" data-zoom-alt="Nine additional Block3D text-to-shape results">
+            <img src="assets/images/additional_results.png" alt="Nine additional Block3D text-to-shape results" loading="lazy">
+            <span class="figure-label"><strong>Additional generations</strong><small>Nine text-to-shape results</small></span>
+          </button>
+        </div>
       </div>
     </section>
 
     <section class="section citation-section" id="citation">
-      <div class="shell citation-layout">
+      <div class="section-inner citation-layout">
         <div>
-          <p class="eyebrow">Citation</p>
+          <p class="section-label">Citation</p>
           <h2>Cite Block3D</h2>
-          <p>Author metadata will be updated before the public release.</p>
-          <div class="affiliations" aria-label="Affiliations">
+          <p class="citation-note">Author metadata will be updated before the public release.</p>
+          <div class="logo-row" aria-label="Affiliations">
             <img src="assets/logos/zju.png" alt="Zhejiang University">
             <img src="assets/logos/monash.png" alt="Monash University">
           </div>
         </div>
         <div class="bibtex-wrap">
-          <button class="copy-button" type="button" data-copy aria-label="Copy BibTeX">Copy</button>
+          <button class="copy-button" type="button" data-copy title="Copy BibTeX">
+            <i data-lucide="copy" aria-hidden="true"></i><span>Copy</span>
+          </button>
           <pre id="bibtex"><code>@article{anonymous2026block3d,
   title   = {Block3D: Efficient Text-to-3D Generation
              via Block-Wise Diffusion},
@@ -259,14 +282,11 @@
   </main>
 
   <footer class="site-footer">
-    <div class="shell">
-      <span>Block3D <span class="footer-dot"></span> ZIP Lab</span>
-      <span>Project page for research communication</span>
-    </div>
+    <p>&copy; 2026 Block3D &nbsp;&middot;&nbsp; ZIP Lab</p>
   </footer>
 
   <dialog class="image-modal" aria-label="Full-size figure">
-    <button class="modal-close" type="button" aria-label="Close image">&times;</button>
+    <button class="icon-button modal-close" type="button" aria-label="Close figure" title="Close figure"><i data-lucide="x" aria-hidden="true"></i></button>
     <img src="" alt="">
     <p></p>
   </dialog>
