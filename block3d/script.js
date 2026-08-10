@@ -5,12 +5,12 @@ import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
 
 const comparisonExamples = {
   knight: {
-    prompt: "A stylized knight character with a hexagonal helmet, rigid armor plates, a rectangular shield, and a sword arranged in a combat-ready pose.",
+    prompt: "A stylized knight character with a hexagonal helmet with a horizontal eye slit, rigid armor plates, a rectangular shield, and a sword arranged in a combat-ready pose.",
     image: "assets/images/comparison_knight_results.jpg",
     alt: "Qualitative comparison for the knight prompt"
   },
   dog: {
-    prompt: "A small dog figurine in a sitting pose with upward-facing triangular ears, eyes, nose, and colorful splashes on its feet, body, and collar.",
+    prompt: "A small dog figurine in a sitting pose with upward-facing triangular ears, eyes, nose, and colorful splashes on feet, body, and collar.",
     image: "assets/images/comparison_dog_results.jpg",
     alt: "Qualitative comparison for the dog prompt"
   },
@@ -20,7 +20,7 @@ const comparisonExamples = {
     alt: "Qualitative comparison for the Buddha prompt"
   },
   gazebo: {
-    prompt: "An octagonal gazebo with a conical roof, eight vertical support columns, a perimeter railing, and a slightly elevated base with an entry opening.",
+    prompt: "An octagonal gazebo with a conical roof with a finial, eight vertical support columns, a perimeter railing with vertical balusters, and a slightly elevated flat base with an entry opening.",
     image: "assets/images/comparison_gazebo_results.jpg",
     alt: "Qualitative comparison for the gazebo prompt"
   },

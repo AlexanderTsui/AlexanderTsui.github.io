@@ -272,8 +272,10 @@ h3 { font-size: 19px; }
 .figure-button img { width: 100%; }
 .figure-expand { position: absolute; right: 12px; top: 12px; width: 36px; height: 36px; display: grid; place-items: center; color: var(--text); background: rgba(9, 11, 10, .82); border: 1px solid rgba(255, 255, 255, .16); border-radius: 6px; }
 .figure-expand svg { width: 16px; height: 16px; }
+.comparison-scroll { overflow-x: auto; }
+.comparison-media { width: 100%; }
 .comparison-figure { background: white; }
-.method-key { display: grid; grid-template-columns: repeat(5, 1fr); padding-top: 11px; color: var(--muted); font-family: "Roboto Mono", monospace; font-size: 10px; text-align: center; text-transform: uppercase; }
+.method-key { display: grid; grid-template-columns: repeat(5, 1fr); padding-top: 11px; color: var(--muted); font-family: "Roboto Mono", monospace; font-size: 10px; text-align: center; }
 .method-key .ours { color: var(--mint); font-weight: 700; }
 
 .method-section { background: #0c0f0e; }
@@ -377,9 +379,8 @@ h3 { font-size: 19px; }
   .mesh-selector { grid-template-columns: 1fr 1fr; }
   .mesh-option { grid-template-columns: 64px minmax(0, 1fr); }
   .comparisons-section blockquote { min-height: 106px; font-size: 13px; }
-  .comparison-figure { overflow-x: auto; }
-  .comparison-figure img { width: 800px; max-width: none; }
-  .method-key { min-width: 560px; }
+  .comparison-media { width: 800px; }
+  .comparison-figure img { width: 100%; max-width: none; }
   .comparisons-section .section-inner { overflow-x: hidden; }
   .method-section .mode-switch { width: 100%; }
   .method-section .mode-button { flex: 1; }

@@ -209,13 +209,17 @@
           <button class="prompt-tab" type="button" role="tab" aria-selected="false" data-example="gazebo">Gazebo</button>
           <button class="prompt-tab" type="button" role="tab" aria-selected="false" data-example="shoe">Shoe</button>
         </div>
-        <blockquote id="comparison-prompt">A stylized knight character with a hexagonal helmet, rigid armor plates, a rectangular shield, and a sword arranged in a combat-ready pose.</blockquote>
-        <button class="figure-button comparison-figure" type="button" data-zoom-src="assets/images/comparison_knight_results.jpg" data-zoom-alt="Qualitative comparison for the knight prompt">
-          <img id="comparison-image" src="assets/images/comparison_knight_results.jpg" alt="Qualitative comparison for the knight prompt">
-          <span class="figure-expand"><i data-lucide="maximize-2" aria-hidden="true"></i><span class="sr-only">Open full-size comparison</span></span>
-        </button>
-        <div class="method-key" aria-hidden="true">
-          <span>Cube</span><span>LLaDA</span><span>SLATFlow</span><span>PartDiffuser</span><span class="ours">Block3D</span>
+        <blockquote id="comparison-prompt">A stylized knight character with a hexagonal helmet with a horizontal eye slit, rigid armor plates, a rectangular shield, and a sword arranged in a combat-ready pose.</blockquote>
+        <div class="comparison-scroll">
+          <div class="comparison-media">
+            <button class="figure-button comparison-figure" type="button" data-zoom-src="assets/images/comparison_knight_results.jpg" data-zoom-alt="Qualitative comparison for the knight prompt">
+              <img id="comparison-image" src="assets/images/comparison_knight_results.jpg" alt="Qualitative comparison for the knight prompt">
+              <span class="figure-expand"><i data-lucide="maximize-2" aria-hidden="true"></i><span class="sr-only">Open full-size comparison</span></span>
+            </button>
+            <div class="method-key" aria-hidden="true">
+              <span class="ours">Block3D</span><span>Cube</span><span>Trellis-text</span><span>AR3D-R1</span><span>ShapeLLM-omni</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
