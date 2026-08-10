@@ -24,7 +24,7 @@ The supplementary MP4 is hosted as the public GitHub Release asset `block3d-proj
 
 ## Before public release
 
-- Replace `Anonymous Authors` in `index.html` with the final author list and links.
+- Replace the placeholder author metadata in `index.html` with the final author list and links.
 - Update the BibTeX entry in `index.html`.
 - Replace the `Code` and `Weights` placeholders when public URLs are available.
-- Update `AAAI 2027 Submission` if the publication status changes.
+- Update the project metadata when the publication status changes.
