@@ -317,6 +317,8 @@ h3 { font-size: 19px; }
 .site-footer p { margin: 0; font-size: 11px; }
 .site-footer .footer-note { margin-bottom: 6px; color: #9aa39e; }
 .site-footer .footer-note sup { color: var(--mint); }
+.site-footer .footer-contact { margin-bottom: 6px; }
+.site-footer .footer-contact a { color: #9aa39e; }
 
 .image-modal { width: min(96vw, 1500px); max-height: 94vh; padding: 50px 16px 16px; color: var(--text); background: #0a0d0b; border: 1px solid #39413d; border-radius: 6px; }
 .image-modal::backdrop { background: rgba(0, 0, 0, .88); backdrop-filter: blur(6px); }
