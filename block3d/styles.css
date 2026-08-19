@@ -141,8 +141,11 @@ h3 { font-size: 19px; }
 }
 .hero h1 { margin-bottom: 25px; font-size: 62px; font-weight: 800; }
 .hero h1 span { display: block; margin-bottom: 8px; color: var(--mint); font-size: 76px; }
-.hero-authors { margin-bottom: 6px; font-size: 18px; font-weight: 600; }
-.hero-affiliations { margin-bottom: 34px; color: var(--muted); font-size: 14px; }
+.hero-authors { max-width: 1040px; margin: 0 auto 8px; font-size: 18px; font-weight: 600; line-height: 1.65; }
+.hero-authors .author { display: inline-block; white-space: nowrap; }
+.hero-authors sup,
+.hero-affiliations sup { margin-left: 1px; color: var(--mint); font-size: .68em; vertical-align: super; }
+.hero-affiliations { max-width: 1080px; margin: 0 auto 34px; color: var(--muted); font-size: 14px; line-height: 1.7; }
 .resource-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
 .resource-button {
   min-height: 50px;
@@ -352,8 +355,8 @@ h3 { font-size: 19px; }
   .hero { min-height: min(735px, calc(100svh - 34px)); padding: calc(var(--header-h) + 44px) 18px 42px; }
   .hero h1 { font-size: 34px; }
   .hero h1 span { font-size: 48px; }
-  .hero-authors { font-size: 15px; }
-  .hero-affiliations { font-size: 12px; }
+  .hero-authors { font-size: 15px; line-height: 1.7; }
+  .hero-affiliations { font-size: 12px; line-height: 1.65; }
   .resource-row { gap: 7px; }
   .resource-button { min-height: 45px; padding: 8px 11px; font-size: 12px; }
   .resource-pending { gap: 6px; }
