@@ -78,6 +78,7 @@ body,
 
 body {
   line-height: 1.62;
+  padding-top: 0;
 }
 
 .masthead {
@@ -85,18 +86,37 @@ body {
   border-bottom: 0;
   display: block !important;
   min-height: 56px;
+  position: sticky;
+  top: 0;
   box-shadow: 0 2px 16px rgba(16, 54, 88, 0.18);
 }
 
 .masthead__inner-wrap {
+  align-items: center;
+  display: flex;
+  justify-content: center;
   max-width: 1180px;
   padding: 0.45rem 1.35rem;
+  width: 100%;
+}
+
+.masthead__menu {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .site-nav {
   background: transparent;
   min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
   width: 100%;
+}
+
+.site-nav::-webkit-scrollbar {
+  display: none;
 }
 
 .site-nav__links {
@@ -106,26 +126,16 @@ body {
   justify-content: center;
   flex-wrap: nowrap;
   list-style: none;
-  margin: 0;
-  min-width: 0;
-  overflow-x: auto;
-  padding: 0;
-  scrollbar-width: none;
-  width: 100%;
-}
-
-.site-nav__links::-webkit-scrollbar {
-  display: none;
+  margin: 0 auto;
+  min-width: 100%;
+  padding: 6px 8px;
+  width: max-content;
 }
 
 .site-nav__item {
   display: block;
   flex: 0 0 auto;
   list-style: none;
-}
-
-.site-nav__item--brand {
-  margin-right: auto;
 }
 
 .site-nav__item a {
@@ -137,13 +147,6 @@ body {
   padding: 0.48rem 0.75rem;
   text-decoration: none;
   white-space: nowrap;
-}
-
-.site-nav__item--brand a {
-  color: #fff;
-  font-size: 0.98rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
 }
 
 .site-nav__item a:after {
@@ -270,7 +273,7 @@ body {
   border-radius: 10px;
   box-shadow: 0 7px 22px rgba(27, 57, 80, 0.08);
   display: grid;
-  grid-template-columns: minmax(250px, 0.88fr) minmax(0, 1.12fr);
+  grid-template-columns: minmax(320px, 1.15fr) minmax(280px, 0.85fr);
   align-items: start;
   overflow: hidden;
 }
@@ -289,7 +292,7 @@ body {
   aspect-ratio: 16 / 9;
   display: block;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   opacity: 0.94;
   transition: transform 0.25s ease, opacity 0.25s ease;
   width: 100%;
@@ -626,14 +629,6 @@ body {
   .masthead__inner-wrap {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
-  }
-
-  .site-nav__links {
-    justify-content: flex-start;
-  }
-
-  .site-nav__item--brand {
-    margin-right: 0.35rem;
   }
 
   .site-nav__item a {
