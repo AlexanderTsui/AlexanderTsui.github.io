@@ -83,6 +83,8 @@ body {
 .masthead {
   background: #163d67;
   border-bottom: 0;
+  display: block !important;
+  min-height: 56px;
   box-shadow: 0 2px 16px rgba(16, 54, 88, 0.18);
 }
 
@@ -91,54 +93,101 @@ body {
   padding: 0.45rem 1.35rem;
 }
 
-.greedy-nav {
+.site-nav {
   background: transparent;
+  min-width: 0;
+  width: 100%;
 }
 
-.greedy-nav .visible-links {
+.site-nav__links {
   align-items: center;
   display: flex;
   gap: 0.15rem;
   justify-content: center;
+  flex-wrap: nowrap;
+  list-style: none;
+  margin: 0;
+  min-width: 0;
+  overflow-x: auto;
+  padding: 0;
+  scrollbar-width: none;
   width: 100%;
 }
 
-.greedy-nav .visible-links > li {
-  display: block;
-}
-
-.greedy-nav .visible-links .masthead__menu-item--lg {
+.site-nav__links::-webkit-scrollbar {
   display: none;
 }
 
-.greedy-nav .visible-links a {
+.site-nav__item {
+  display: block;
+  flex: 0 0 auto;
+  list-style: none;
+}
+
+.site-nav__item--brand {
+  margin-right: auto;
+}
+
+.site-nav__item a {
   border-radius: 6px;
   color: rgba(255, 255, 255, 0.9);
   font-size: 0.88rem;
   font-weight: 600;
   margin: 0;
   padding: 0.48rem 0.75rem;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
+.site-nav__item--brand a {
+  color: #fff;
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.site-nav__item a:after {
+  background: #fff;
+  bottom: 0.18rem;
+  content: "";
+  display: block;
+  height: 2px;
+  margin: 0 auto;
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+  width: calc(100% - 1.5rem);
+}
+
+.site-nav__item a:hover:after,
+.site-nav__item.selected a:after {
+  transform: scaleX(1);
+}
+
+.site-nav__item a:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.site-nav__item--theme {
+  margin-left: 0.35rem;
+}
+
+.site-nav__item--theme a {
+  color: #fff;
+  cursor: pointer;
+  padding-right: 0.35rem;
+  padding-left: 0.35rem;
+}
+
+.site-nav__item--theme a:after {
+  display: none;
+}
+
+/* Keep the legacy selector harmless if another layout still emits it. */
 .greedy-nav .visible-links a:before {
   background: #fff;
   bottom: 0.18rem;
   height: 2px;
-}
-
-.greedy-nav .visible-links a:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.greedy-nav #theme-toggle {
-  margin-left: 0.35rem;
-}
-
-.greedy-nav #theme-toggle a {
-  color: #fff;
-  padding-right: 0.35rem;
-  padding-left: 0.35rem;
 }
 
 #main {
@@ -222,21 +271,25 @@ body {
   box-shadow: 0 7px 22px rgba(27, 57, 80, 0.08);
   display: grid;
   grid-template-columns: minmax(250px, 0.88fr) minmax(0, 1.12fr);
+  align-items: start;
   overflow: hidden;
 }
 
 .research-card__media {
+  aspect-ratio: 16 / 9;
   background: #122337;
   display: block;
-  min-height: 245px;
+  min-height: 0;
   overflow: hidden;
   position: relative;
+  width: 100%;
 }
 
 .research-card__media video {
+  aspect-ratio: 16 / 9;
   display: block;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   opacity: 0.94;
   transition: transform 0.25s ease, opacity 0.25s ease;
   width: 100%;
@@ -560,12 +613,12 @@ body {
   }
 
   .research-card__media {
-    min-height: 0;
+    aspect-ratio: 16 / 9;
   }
 
   .research-card__media video {
     aspect-ratio: 16 / 9;
-    height: auto;
+    height: 100%;
   }
 }
 
@@ -575,7 +628,15 @@ body {
     padding-right: 0.75rem;
   }
 
-  .greedy-nav .visible-links a {
+  .site-nav__links {
+    justify-content: flex-start;
+  }
+
+  .site-nav__item--brand {
+    margin-right: 0.35rem;
+  }
+
+  .site-nav__item a {
     font-size: 0.8rem;
     padding-left: 0.45rem;
     padding-right: 0.45rem;
