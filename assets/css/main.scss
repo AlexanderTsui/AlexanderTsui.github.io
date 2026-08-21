@@ -123,19 +123,23 @@ body {
   align-items: center;
   display: flex;
   gap: 0.15rem;
-  justify-content: center;
+  justify-content: flex-end;
   flex-wrap: nowrap;
   list-style: none;
-  margin: 0 auto;
-  min-width: 100%;
+  margin: 0;
+  min-width: 0;
   padding: 6px 8px;
-  width: max-content;
+  width: 100%;
 }
 
 .site-nav__item {
   display: block;
   flex: 0 0 auto;
   list-style: none;
+}
+
+.site-nav__item--brand {
+  margin-right: auto;
 }
 
 .site-nav__item a {
@@ -147,6 +151,13 @@ body {
   padding: 0.48rem 0.75rem;
   text-decoration: none;
   white-space: nowrap;
+}
+
+.site-nav__item--brand a {
+  color: #fff;
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
 }
 
 .site-nav__item a:after {
@@ -273,7 +284,7 @@ body {
   border-radius: 10px;
   box-shadow: 0 7px 22px rgba(27, 57, 80, 0.08);
   display: grid;
-  grid-template-columns: minmax(320px, 1.15fr) minmax(280px, 0.85fr);
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
   align-items: start;
   overflow: hidden;
 }
@@ -292,7 +303,7 @@ body {
   aspect-ratio: 16 / 9;
   display: block;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   opacity: 0.94;
   transition: transform 0.25s ease, opacity 0.25s ease;
   width: 100%;
@@ -329,12 +340,13 @@ body {
 .research-card__body {
   display: flex;
   flex-direction: column;
-  padding: 1.25rem 1.45rem 1.15rem;
+  min-width: 0;
+  padding: 1.05rem 1.2rem 0.95rem;
 }
 
 .research-card__eyebrow {
   color: var(--homepage-muted) !important;
-  font-size: 0.77rem !important;
+  font-size: 0.7rem !important;
   font-weight: 600;
   letter-spacing: 0.025em;
   margin: 0 0 0.48rem !important;
@@ -343,13 +355,14 @@ body {
 
 .research-card__body h3 {
   color: var(--homepage-ink);
-  font-size: 1.16rem;
-  line-height: 1.32;
+  font-size: 1.05rem;
+  line-height: 1.25;
   margin: 0 0 0.58rem;
 }
 
 .research-card__body > p:not(.research-card__eyebrow) {
-  font-size: 0.93rem;
+  font-size: 0.86rem;
+  line-height: 1.45;
   margin: 0;
 }
 
@@ -365,7 +378,7 @@ body {
 .research-card__links a {
   align-items: center;
   display: inline-flex;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 600;
   gap: 0.32rem;
   text-decoration: none !important;
@@ -635,6 +648,10 @@ body {
     font-size: 0.8rem;
     padding-left: 0.45rem;
     padding-right: 0.45rem;
+  }
+
+  .site-nav__item--brand {
+    margin-right: 0.35rem;
   }
 
   #main {
