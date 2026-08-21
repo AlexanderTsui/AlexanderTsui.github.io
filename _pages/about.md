@@ -47,7 +47,7 @@ I am currently a remote research intern at **CAD&CG Lab / ZIP Lab, Zhejiang Univ
       <p>
         <a class="PaperTitle" href="/block3d/"><b>Block3D: Efficient Text-to-3D Generation via Block-Wise Diffusion</b></a><br>
         <span class="venue-card">arXiv, 2026</span><br>
-        <strong><span class="author-highlight">Bowen Cui</span></strong>, first author<br>
+        <strong><span class="author-highlight">Bowen Cui</span></strong>, Weijie Wang, Zeyu Zhang, Yefei He, Mingda Lin, Haoyu Zhao, Yuanyu He, Donny Y. Chen, Feng Chen, Bohan Zhuang<br>
         CAD&amp;CG Lab / ZIP Lab, Zhejiang University
       </p>
       <div class="paper-links" role="group" aria-label="Block3D resources">
