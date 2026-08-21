@@ -216,6 +216,10 @@ h3 { font-size: 19px; }
 .abstract-section { background: #0c0f0e; }
 .abstract-copy { color: #c4cbc7; font-size: 17px; line-height: 1.85; }
 .abstract-copy strong { color: var(--text); }
+.abstract-contact { margin-top: 24px; color: var(--muted); font-size: 12px; line-height: 1.6; }
+.abstract-contact p { margin: 0; }
+.abstract-contact-label { display: inline-block; min-width: 112px; color: var(--mint); font-family: "Roboto Mono", monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+.abstract-contact a { color: #c4cbc7; }
 .metric-strip { margin-top: 64px; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .metric-strip > div { min-height: 142px; display: flex; flex-direction: column; justify-content: center; padding: 26px 30px; border-right: 1px solid var(--line); }
 .metric-strip > div:last-child { border-right: 0; }
