@@ -33,24 +33,30 @@ I am currently a remote research intern at **CAD&CG Lab / ZIP Lab, Zhejiang Univ
 # <i class="fas fa-flask section-icon" aria-hidden="true"></i> Research Projects
 
 <div class="research-grid">
-  <article class="research-card research-card--featured">
-    <a class="research-card__media" href="/block3d/" aria-label="Open the Block3D project page">
-      <video autoplay muted loop playsinline preload="metadata" poster="/block3d/assets/video/frame_03.jpg" aria-hidden="true">
-        <source src="https://github.com/AlexanderTsui/AlexanderTsui.github.io/releases/download/block3d-project-page-assets-v1/block3d_supplementary.mp4" type="video/mp4">
-      </video>
-      <span class="research-card__overlay"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> View project</span>
-    </a>
-    <div class="research-card__body">
-      <p class="research-card__eyebrow">2026 - First author - arXiv preprint</p>
-      <h3>Block3D: Efficient Text-to-3D Generation via Block-Wise Diffusion</h3>
-      <p>Efficient block-wise diffusion for text-to-3D generation, delivering a <strong>5.15x speedup</strong> while preserving geometric fidelity.</p>
-      <div class="research-card__links" aria-label="Block3D resources">
-        <a href="/block3d/"><i class="fas fa-globe" aria-hidden="true"></i> Project Page</a>
-        <a href="https://arxiv.org/abs/2608.19567" target="_blank" rel="noreferrer"><i class="ai ai-arxiv" aria-hidden="true"></i> arXiv</a>
-        <a href="/block3d/#video"><i class="fas fa-film" aria-hidden="true"></i> Video</a>
+  <div class="paper-box paper-box--block3d">
+    <div class="paper-box-image">
+      <div class="paper-box-video-frame">
+        <a href="/block3d/" aria-label="Open the Block3D project page">
+          <video class="paper-box-video" autoplay muted loop playsinline preload="metadata" poster="/block3d/assets/video/frame_03.jpg" aria-hidden="true">
+            <source src="https://github.com/AlexanderTsui/AlexanderTsui.github.io/releases/download/block3d-project-page-assets-v1/block3d_supplementary.mp4" type="video/mp4">
+          </video>
+        </a>
       </div>
     </div>
-  </article>
+    <div class="paper-box-text">
+      <p>
+        <a class="PaperTitle" href="/block3d/"><b>Block3D: Efficient Text-to-3D Generation via Block-Wise Diffusion</b></a><br>
+        <span class="venue-card">arXiv, 2026</span><br>
+        <strong><span class="author-highlight">Bowen Cui</span></strong>, first author<br>
+        CAD&amp;CG Lab / ZIP Lab, Zhejiang University
+      </p>
+      <div class="paper-links" role="group" aria-label="Block3D resources">
+        <a class="paper-link paper-link--project" href="/block3d/"><i class="fas fa-globe" aria-hidden="true"></i><span>Project Page</span></a>
+        <a class="paper-link paper-link--pdf" href="https://arxiv.org/abs/2608.19567" target="_blank" rel="noreferrer"><span class="paper-link__arxiv-mark" aria-hidden="true">arXiv</span><span>Paper</span></a>
+        <a class="paper-link paper-link--project" href="/block3d/#video"><i class="fas fa-film" aria-hidden="true"></i><span>Video</span></a>
+      </div>
+    </div>
+  </div>
 </div>
 
 <span class="anchor" id="internship"></span>
