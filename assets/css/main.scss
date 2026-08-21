@@ -78,7 +78,7 @@ body,
 
 body {
   line-height: 1.62;
-  padding-top: 0;
+  padding-top: 70px !important;
 }
 
 .masthead {
@@ -86,8 +86,9 @@ body {
   border-bottom: 1px solid rgba(16, 72, 115, 0.32);
   display: block !important;
   font-size: 21px;
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
   z-index: 20;
   box-shadow: 0 2px 12px rgba(16, 72, 115, 0.16);
 }
