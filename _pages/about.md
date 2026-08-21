@@ -41,7 +41,7 @@ I am currently a remote research intern at **CAD&CG Lab / ZIP Lab, Zhejiang Univ
       <span class="research-card__overlay"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> View project</span>
     </a>
     <div class="research-card__body">
-      <p class="research-card__eyebrow">2026 - First author - arXiv preprint - CAD&amp;CG Lab / ZIP Lab</p>
+      <p class="research-card__eyebrow">2026 - First author - arXiv preprint</p>
       <h3>Block3D: Efficient Text-to-3D Generation via Block-Wise Diffusion</h3>
       <p>Efficient block-wise diffusion for text-to-3D generation, delivering a <strong>5.15x speedup</strong> while preserving geometric fidelity.</p>
       <div class="research-card__links" aria-label="Block3D resources">
