@@ -43,7 +43,7 @@ I am currently a remote research intern at **CAD&CG Lab / ZIP Lab, Zhejiang Univ
     <div class="research-card__body">
       <p class="research-card__eyebrow">2026 - First author - arXiv preprint - CAD&amp;CG Lab / ZIP Lab</p>
       <h3>Block3D: Efficient Text-to-3D Generation via Block-Wise Diffusion</h3>
-      <p>Block3D partitions shape tokens into contiguous blocks, jointly denoises each active block, and uses confidence-guided correction to revise uncertain tokens. It reaches a <strong>5.15x speedup</strong> over the fine-tuned autoregressive baseline without sacrificing geometric fidelity.</p>
+      <p>Efficient block-wise diffusion for text-to-3D generation, delivering a <strong>5.15x speedup</strong> while preserving geometric fidelity.</p>
       <div class="research-card__links" aria-label="Block3D resources">
         <a href="/block3d/"><i class="fas fa-globe" aria-hidden="true"></i> Project Page</a>
         <a href="https://arxiv.org/abs/2608.19567" target="_blank" rel="noreferrer"><i class="ai ai-arxiv" aria-hidden="true"></i> arXiv</a>

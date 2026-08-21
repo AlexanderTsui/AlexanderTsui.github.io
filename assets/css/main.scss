@@ -341,7 +341,7 @@ body {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  padding: 1.05rem 1.2rem 0.95rem;
+  padding: 0.85rem 1rem 0.75rem;
 }
 
 .research-card__eyebrow {
@@ -356,8 +356,8 @@ body {
 .research-card__body h3 {
   color: var(--homepage-ink);
   font-size: 1.05rem;
-  line-height: 1.25;
-  margin: 0 0 0.58rem;
+  line-height: 1.2;
+  margin: 0 0 0.42rem;
 }
 
 .research-card__body > p:not(.research-card__eyebrow) {
@@ -372,7 +372,7 @@ body {
   flex-wrap: wrap;
   gap: 0.8rem 1.05rem;
   margin-top: auto;
-  padding-top: 1rem;
+  padding-top: 0.6rem;
 }
 
 .research-card__links a {
