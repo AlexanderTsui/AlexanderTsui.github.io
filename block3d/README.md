@@ -22,7 +22,9 @@ This project page is published from the `block3d/` subdirectory of the public `A
 
 The supplementary MP4 is hosted as the public GitHub Release asset `block3d-project-page-assets-v1` to keep the Pages commit lightweight while retaining HTTP Range support.
 
-## Before public release
+## Resources
 
-- Replace the `Code` and `Weights` placeholders when public URLs are available.
-- Update the project metadata when the publication status changes.
+- Code: <https://github.com/AlexanderTsui/Block3D>
+- Project page: <https://alexandertsui.github.io/block3d/>
+- Weights are not redistributed; see the code repository README for the required
+  upstream initialization files.
