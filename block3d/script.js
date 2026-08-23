@@ -74,27 +74,6 @@ nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", () =>
   refreshIcons();
 }));
 
-const video = document.querySelector("#project-video");
-const chapters = [...document.querySelectorAll(".chapter")];
-
-chapters.forEach((chapter) => {
-  chapter.addEventListener("click", async () => {
-    const seek = () => {
-      video.currentTime = Number(chapter.dataset.time);
-      video.play().catch(() => {});
-    };
-
-    chapters.forEach((item) => item.classList.toggle("is-active", item === chapter));
-    if (video.readyState >= 1) seek();
-    else video.addEventListener("loadedmetadata", seek, { once: true });
-  });
-});
-
-video.addEventListener("timeupdate", () => {
-  const active = [...chapters].reverse().find((chapter) => video.currentTime >= Number(chapter.dataset.time));
-  if (active) chapters.forEach((chapter) => chapter.classList.toggle("is-active", chapter === active));
-});
-
 document.querySelectorAll("[data-example]").forEach((button) => {
   button.addEventListener("click", () => {
     const example = comparisonExamples[button.dataset.example];

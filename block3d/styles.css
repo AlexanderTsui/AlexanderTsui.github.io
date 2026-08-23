@@ -184,27 +184,6 @@ h3 { font-size: 19px; }
 .video-section { padding-top: 78px; background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .video-frame { width: min(100%, 1180px); margin: 0 auto; background: #000; border: 1px solid #323a36; box-shadow: 0 26px 70px rgba(0, 0, 0, .32); }
 .video-frame video { width: 100%; aspect-ratio: 16 / 9; }
-.chapter-row { width: min(100%, 1180px); margin: 18px auto 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
-.chapter {
-  min-width: 0;
-  display: grid;
-  grid-template-columns: 70px minmax(0, 1fr);
-  align-items: center;
-  gap: 10px;
-  padding: 6px;
-  color: var(--muted);
-  background: transparent;
-  border: 1px solid transparent;
-  border-radius: 6px;
-  cursor: pointer;
-  text-align: left;
-}
-.chapter:hover, .chapter.is-active { color: var(--text); background: var(--surface-2); border-color: var(--line); }
-.chapter.is-active { border-bottom-color: var(--mint); }
-.chapter img { width: 70px; aspect-ratio: 16 / 9; object-fit: cover; }
-.chapter span { min-width: 0; font-size: 11px; line-height: 1.35; }
-.chapter strong { display: block; color: var(--mint); font-family: "Roboto Mono", monospace; font-size: 9px; font-weight: 500; }
-
 .abstract-section { background: #0c0f0e; }
 .abstract-copy { color: #c4cbc7; font-size: 17px; line-height: 1.85; }
 .abstract-copy strong { color: var(--text); }
@@ -326,8 +305,6 @@ h3 { font-size: 19px; }
   .site-nav { gap: 18px; }
   .hero h1 { font-size: 50px; }
   .hero h1 span { font-size: 66px; }
-  .chapter { grid-template-columns: 1fr; }
-  .chapter img { width: 100%; }
   .mesh-stage { min-height: 420px; }
   .mesh-option { grid-template-columns: 64px minmax(0, 1fr); }
   .mesh-option img { width: 64px; height: 54px; }
@@ -362,8 +339,6 @@ h3 { font-size: 19px; }
   .split-heading { display: grid; gap: 18px; }
   .split-heading > p { width: 100%; }
   .video-section { padding-top: 66px; }
-  .chapter-row { display: flex; overflow-x: auto; padding-bottom: 8px; }
-  .chapter { flex: 0 0 142px; }
   .abstract-copy { font-size: 15px; }
   .metric-strip { grid-template-columns: 1fr 1fr; }
   .metric-strip > div { min-height: 120px; padding: 18px; }
