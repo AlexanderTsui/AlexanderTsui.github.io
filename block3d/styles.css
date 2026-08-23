@@ -132,7 +132,7 @@ h3 { font-size: 19px; }
 .hero-authors { max-width: 1040px; margin: 0 auto 8px; font-size: 18px; font-weight: 600; line-height: 1.65; }
 .hero-authors .author { display: inline-block; white-space: nowrap; }
 .hero-authors sup,
-.hero-affiliations sup,
+.hero-affiliations sup { margin-left: 1px; color: var(--mint); font-size: .68em; vertical-align: super; }
 .hero-contribution sup { margin-left: 1px; color: var(--mint); font-size: .68em; vertical-align: super; }
 .hero-affiliations { max-width: 1080px; margin: 0 auto 12px; color: var(--muted); font-size: 14px; line-height: 1.7; }
 .hero-contribution { margin: 0 auto 5px; color: #c4cbc7; font-size: 12px; line-height: 1.5; }
