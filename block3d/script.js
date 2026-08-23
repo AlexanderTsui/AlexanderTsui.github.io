@@ -182,6 +182,17 @@ gltfLoader.setDRACOLoader(dracoLoader);
 
 const selectedModelButton = () => document.querySelector("[data-model].is-active");
 
+function updateMeshPreview(button) {
+  const source = meshPreview.querySelector("source");
+  const videoSrc = button.dataset.video;
+  if (!source || !videoSrc || source.getAttribute("src") === videoSrc) return;
+
+  source.src = videoSrc;
+  meshPreview.poster = button.dataset.poster;
+  meshPreview.load();
+  meshPreview.play().catch(() => {});
+}
+
 function initMeshViewer() {
   if (renderer) return;
 
@@ -266,7 +277,16 @@ function disposeActiveModel() {
 
 function resetCamera() {
   if (!camera || !controls) return;
-  camera.position.set(3.2, 2.2, 4.2);
+  const viewSize = activeModel
+    ? new THREE.Box3().setFromObject(activeModel).getSize(new THREE.Vector3())
+    : new THREE.Vector3(2.55, 2.55, 2.55);
+  const verticalFov = THREE.MathUtils.degToRad(camera.fov);
+  const horizontalFov = 2 * Math.atan(Math.tan(verticalFov / 2) * camera.aspect);
+  const verticalDistance = viewSize.y / (2 * Math.tan(verticalFov / 2));
+  const horizontalDistance = Math.max(viewSize.x, viewSize.z) / (2 * Math.tan(horizontalFov / 2));
+  const distance = Math.max(verticalDistance, horizontalDistance) * 1.28;
+  const direction = new THREE.Vector3(3.2, 2.2, 4.2).normalize();
+  camera.position.copy(direction.multiplyScalar(distance));
   controls.target.set(0, 0, 0);
   controls.update();
 }
@@ -370,6 +390,7 @@ modelButtons.forEach((button) => {
     meshTitle.textContent = button.dataset.title;
     meshPoster.src = button.dataset.poster;
     meshPoster.alt = `Preview of the ${button.dataset.title} mesh`;
+    updateMeshPreview(button);
 
     if (renderer && activeModelKey !== button.dataset.model) {
       isLoading = false;
