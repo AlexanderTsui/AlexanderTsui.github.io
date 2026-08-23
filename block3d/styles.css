@@ -310,7 +310,7 @@ h3 { font-size: 19px; }
 .citation-layout { display: grid; grid-template-columns: .7fr 1.3fr; gap: 72px; }
 .citation-note { color: var(--muted); font-size: 14px; }
 .logo-row { margin-top: 32px; display: flex; align-items: center; gap: 24px; }
-.logo-row img { max-width: 130px; max-height: 40px; object-fit: contain; filter: grayscale(1) brightness(2.8); opacity: .72; }
+.logo-row img { max-width: 130px; max-height: 40px; object-fit: contain; filter: grayscale(1) brightness(0) invert(1); opacity: .72; }
 .bibtex-wrap { position: relative; min-width: 0; }
 .bibtex-wrap pre { margin: 0; overflow-x: auto; padding: 28px; color: #cdd8d2; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; font-family: "Roboto Mono", monospace; font-size: 11px; line-height: 1.75; }
 .copy-button { position: absolute; z-index: 1; top: 10px; right: 10px; display: inline-flex; align-items: center; gap: 7px; padding: 7px 10px; color: var(--text); background: var(--surface-3); border: 1px solid #3a453f; border-radius: 6px; cursor: pointer; font-size: 11px; }
