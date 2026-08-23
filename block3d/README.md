@@ -24,7 +24,7 @@ The supplementary MP4 is hosted as the public GitHub Release asset `block3d-proj
 
 ## Resources
 
-- Code: <https://github.com/AlexanderTsui/Block3D>
+- Code: <https://github.com/ziplab/Block3D>
 - Project page: <https://alexandertsui.github.io/block3d/>
 - Weights are not redistributed; see the code repository README for the required
   upstream initialization files.
