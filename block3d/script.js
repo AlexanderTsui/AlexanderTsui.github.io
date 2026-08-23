@@ -38,7 +38,7 @@ const methodFigures = {
     caption: "Block3D retains causal structure across blocks while enabling parallel, bidirectional denoising within each active block."
   },
   pipeline: {
-    src: "assets/images/pipeline.jpg",
+    src: "assets/images/pipeline_02.png",
     alt: "Block3D training and inference pipeline",
     caption: "Training uses a block-causal visibility pattern; inference alternates masked-token recovery with confidence-guided token correction."
   }
