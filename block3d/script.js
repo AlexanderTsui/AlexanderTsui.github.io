@@ -173,6 +173,7 @@ document.querySelector("[data-copy]").addEventListener("click", async (event) =>
 });
 
 const meshStage = document.querySelector("#mesh-stage");
+const meshPreview = document.querySelector("#mesh-preview");
 const meshPoster = document.querySelector("#mesh-poster");
 const meshTitle = document.querySelector("#mesh-title");
 const meshStatus = document.querySelector("[data-mesh-status]");
@@ -291,6 +292,20 @@ function resetCamera() {
   controls.update();
 }
 
+function showMeshPreview() {
+  meshPreview.hidden = false;
+  meshPoster.hidden = true;
+  meshLoadButton.hidden = false;
+}
+
+function showPosterFallback() {
+  meshPreview.hidden = true;
+  meshPoster.hidden = false;
+  meshLoadButton.hidden = false;
+}
+
+meshPreview.addEventListener("error", showPosterFallback);
+
 function updateModelMaterials() {
   if (!activeModel) return;
   activeModel.traverse((child) => {
@@ -345,14 +360,14 @@ async function loadSelectedModel() {
     const centeredBounds = new THREE.Box3().setFromObject(activeModel);
     meshFloor.position.y = centeredBounds.min.y - 0.04;
 
+    meshPreview.hidden = true;
     meshPoster.hidden = true;
     meshLoadButton.hidden = true;
     meshStatus.textContent = button.dataset.title;
     resetCamera();
   } catch (error) {
     console.error("Unable to load mesh", error);
-    meshPoster.hidden = false;
-    meshLoadButton.hidden = false;
+    showMeshPreview();
     meshStatus.textContent = "3D asset unavailable";
   } finally {
     if (requestId === activeRequest) {

@@ -127,25 +127,17 @@ h3 { font-size: 19px; }
 .hero-backdrop { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: .36; }
 .hero-overlay { position: absolute; z-index: -1; inset: 0; background: rgba(5, 7, 6, .72); }
 .hero-content { width: min(100%, 1080px); }
-.venue-badge {
-  display: inline-flex;
-  margin-bottom: 28px;
-  padding: 8px 18px;
-  color: var(--mint);
-  background: rgba(119, 211, 168, .08);
-  border: 1px solid rgba(119, 211, 168, .36);
-  border-radius: 8px;
-  font-family: "Roboto Mono", monospace;
-  font-size: 13px;
-  font-weight: 500;
-}
 .hero h1 { margin-bottom: 25px; font-size: 62px; font-weight: 800; }
 .hero h1 span { display: block; margin-bottom: 8px; color: var(--mint); font-size: 76px; }
 .hero-authors { max-width: 1040px; margin: 0 auto 8px; font-size: 18px; font-weight: 600; line-height: 1.65; }
 .hero-authors .author { display: inline-block; white-space: nowrap; }
 .hero-authors sup,
-.hero-affiliations sup { margin-left: 1px; color: var(--mint); font-size: .68em; vertical-align: super; }
-.hero-affiliations { max-width: 1080px; margin: 0 auto 34px; color: var(--muted); font-size: 14px; line-height: 1.7; }
+.hero-affiliations sup,
+.hero-contribution sup { margin-left: 1px; color: var(--mint); font-size: .68em; vertical-align: super; }
+.hero-affiliations { max-width: 1080px; margin: 0 auto 12px; color: var(--muted); font-size: 14px; line-height: 1.7; }
+.hero-contribution { margin: 0 auto 5px; color: #c4cbc7; font-size: 12px; line-height: 1.5; }
+.hero-contact { margin: 0 auto 25px; color: #aeb8b2; font-size: 12px; line-height: 1.5; }
+.hero-contact a { color: #cdd8d2; text-decoration: underline; text-underline-offset: 2px; }
 .resource-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
 .resource-button {
   min-height: 50px;
@@ -216,10 +208,6 @@ h3 { font-size: 19px; }
 .abstract-section { background: #0c0f0e; }
 .abstract-copy { color: #c4cbc7; font-size: 17px; line-height: 1.85; }
 .abstract-copy strong { color: var(--text); }
-.abstract-contact { margin-top: 24px; color: var(--muted); font-size: 12px; line-height: 1.6; }
-.abstract-contact p { margin: 0; }
-.abstract-contact-label { display: inline-block; min-width: 112px; color: var(--mint); font-family: "Roboto Mono", monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
-.abstract-contact a { color: #c4cbc7; }
 .metric-strip { margin-top: 64px; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .metric-strip > div { min-height: 142px; display: flex; flex-direction: column; justify-content: center; padding: 26px 30px; border-right: 1px solid var(--line); }
 .metric-strip > div:last-child { border-right: 0; }
@@ -238,9 +226,11 @@ h3 { font-size: 19px; }
 .mode-button.is-active { color: #07110c; background: var(--mint); }
 .mesh-stage { position: relative; width: 100%; aspect-ratio: 16 / 8.2; min-height: 480px; overflow: hidden; background: #0c100e; touch-action: none; }
 .mesh-stage::after { content: ""; position: absolute; pointer-events: none; inset: 0; border: 1px solid rgba(255, 255, 255, .025); }
-.mesh-stage canvas { width: 100%; height: 100%; cursor: grab; }
+.mesh-stage canvas { position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; cursor: grab; }
 .mesh-stage canvas:active { cursor: grabbing; }
-.mesh-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; image-rendering: auto; filter: contrast(1.05); }
+.mesh-preview,
+.mesh-poster { position: absolute; z-index: 1; inset: 0; width: 100%; height: 100%; object-fit: cover; background: #0c100e; }
+.mesh-poster { object-fit: contain; image-rendering: auto; filter: contrast(1.05); }
 .mesh-load-button {
   position: absolute;
   z-index: 3;
@@ -309,8 +299,8 @@ h3 { font-size: 19px; }
 .citation-section { background: #090b0a; border-top: 1px solid var(--line); }
 .citation-layout { display: grid; grid-template-columns: .7fr 1.3fr; gap: 72px; }
 .citation-note { color: var(--muted); font-size: 14px; }
-.logo-row { margin-top: 32px; display: flex; align-items: center; gap: 24px; }
-.logo-row img { max-width: 130px; max-height: 40px; object-fit: contain; filter: grayscale(1) brightness(2.8); opacity: .72; }
+.logo-row { margin-top: 32px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.logo-row img { box-sizing: border-box; width: 150px; height: 58px; padding: 8px 12px; object-fit: contain; background: #fff; border-radius: 4px; filter: none; opacity: 1; }
 .bibtex-wrap { position: relative; min-width: 0; }
 .bibtex-wrap pre { margin: 0; overflow-x: auto; padding: 28px; color: #cdd8d2; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; font-family: "Roboto Mono", monospace; font-size: 11px; line-height: 1.75; }
 .copy-button { position: absolute; z-index: 1; top: 10px; right: 10px; display: inline-flex; align-items: center; gap: 7px; padding: 7px 10px; color: var(--text); background: var(--surface-3); border: 1px solid #3a453f; border-radius: 6px; cursor: pointer; font-size: 11px; }
@@ -319,10 +309,6 @@ h3 { font-size: 19px; }
 
 .site-footer { padding: 24px; color: #747f79; background: #060807; border-top: 1px solid #171c19; text-align: center; }
 .site-footer p { margin: 0; font-size: 11px; }
-.site-footer .footer-note { margin-bottom: 6px; color: #9aa39e; }
-.site-footer .footer-note sup { color: var(--mint); }
-.site-footer .footer-contact { margin-bottom: 6px; }
-.site-footer .footer-contact a { color: #9aa39e; }
 
 .image-modal { width: min(96vw, 1500px); max-height: 94vh; padding: 50px 16px 16px; color: var(--text); background: #0a0d0b; border: 1px solid #39413d; border-radius: 6px; }
 .image-modal::backdrop { background: rgba(0, 0, 0, .88); backdrop-filter: blur(6px); }
@@ -365,6 +351,8 @@ h3 { font-size: 19px; }
   .hero h1 span { font-size: 48px; }
   .hero-authors { font-size: 15px; line-height: 1.7; }
   .hero-affiliations { font-size: 12px; line-height: 1.65; }
+  .hero-contribution, .hero-contact { font-size: 11px; }
+  .hero-contact { margin-bottom: 22px; }
   .resource-row { gap: 7px; }
   .resource-button { min-height: 45px; padding: 8px 11px; font-size: 12px; }
   .resource-pending { gap: 6px; }
@@ -406,7 +394,6 @@ h3 { font-size: 19px; }
 }
 
 @media (max-width: 430px) {
-  .venue-badge { margin-bottom: 21px; }
   .hero { min-height: min(760px, calc(100svh - 24px)); }
   .hero h1 { font-size: 30px; }
   .hero h1 span { font-size: 43px; }

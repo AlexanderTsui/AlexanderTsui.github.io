@@ -50,7 +50,6 @@
       <img class="hero-backdrop" src="assets/images/arena_views.jpg" alt="Block3D generated assets assembled into a gladiator arena">
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-content">
-        <p class="venue-badge">Project Page</p>
         <h1 id="hero-title"><span>Block3D</span> Efficient Text-to-3D Generation via Block-Wise Diffusion</h1>
         <p class="hero-authors">
           <span class="author">Bowen Cui<sup>1,†</sup>,</span>
@@ -69,6 +68,8 @@
           <span><sup>2</sup>Monash University</span> &middot;
           <span><sup>3</sup>University of Adelaide</span>
         </p>
+        <p class="hero-contribution"><sup>†</sup>Equal contribution. <sup>*</sup>Corresponding authors.</p>
+        <p class="hero-contact"><a href="mailto:wangweijie@zju.edu.cn">wangweijie@zju.edu.cn</a> &middot; <a href="mailto:chenfeng1271@gmail.com">chenfeng1271@gmail.com</a></p>
         <div class="resource-row" aria-label="Project resources">
           <a class="resource-button resource-primary" href="assets/papers/block3d.pdf" target="_blank" rel="noreferrer">
             <i data-lucide="file-text" aria-hidden="true"></i><span>Paper</span>
@@ -124,9 +125,6 @@
         <h2>Fast generation without giving up correction</h2>
         <p class="abstract-copy">While text-to-3D generation has advanced rapidly, achieving high geometric fidelity at low inference cost remains challenging. Existing methods either decode discrete shape tokens autoregressively or iteratively refine global 3D representations with diffusion or flow models. Autoregressive decoding is sequential and cannot revise errors, whereas diffusion and flow-matching models repeatedly process the full representation.</p>
         <p class="abstract-copy">We propose <strong>Block3D</strong>, a block-wise diffusion framework that partitions the discrete shape-token sequence into contiguous blocks, generates the blocks autoregressively, and jointly denoises all tokens within the current block. Confidence-guided intra-block correction revises low-confidence tokens before each block is finalized. On a held-out set from TRELLIS-500K, Block3D reduces mean end-to-end generation time from 25.71 seconds to 4.99 seconds, achieving a 5.15&times; speedup over the fine-tuned autoregressive baseline without sacrificing geometric fidelity.</p>
-        <div class="abstract-contact" aria-label="Project contacts">
-          <p><span class="abstract-contact-label">Corresponding authors</span> Weijie Wang: <a href="mailto:wangweijie@zju.edu.cn">wangweijie@zju.edu.cn</a>; Feng Chen: <a href="mailto:chenfeng1271@gmail.com">chenfeng1271@gmail.com</a></p>
-        </div>
       </div>
       <div class="metric-strip section-inner wide" aria-label="Key results">
         <div><strong>5.15&times;</strong><span>faster than AR</span></div>
@@ -167,7 +165,10 @@
           </div>
 
           <div class="mesh-stage" id="mesh-stage">
-            <img class="mesh-poster" id="mesh-poster" src="assets/models/additional/standing-male.png" alt="Preview of the standing figurine mesh">
+            <video class="mesh-preview" id="mesh-preview" autoplay loop muted playsinline preload="auto" poster="assets/models/additional/standing-male.png" aria-label="Preview of a Block3D generated mesh">
+              <source src="assets/video/mesh_preview.mp4" type="video/mp4">
+            </video>
+            <img class="mesh-poster" id="mesh-poster" src="assets/models/additional/standing-male.png" alt="Preview of the standing figurine mesh" hidden>
             <button class="mesh-load-button" type="button" data-load-mesh>
               <i data-lucide="box" aria-hidden="true"></i><span>Load 3D</span>
             </button>
@@ -209,12 +210,8 @@
 
     <section class="section comparisons-section" id="comparisons">
       <div class="section-inner wide">
-        <div class="section-heading split-heading">
-          <div>
-            <p class="section-label">Comparisons</p>
-            <h2>Quality across prompts</h2>
-          </div>
-          <p>Front and back views use the same camera and normalization for every method.</p>
+        <div class="section-heading">
+          <h2>Quality across prompts</h2>
         </div>
 
         <div class="prompt-tabs" role="tablist" aria-label="Qualitative examples">
@@ -229,7 +226,6 @@
           <div class="comparison-media">
             <button class="figure-button comparison-figure" type="button" data-zoom-src="assets/images/comparison_knight_results.jpg" data-zoom-alt="Qualitative comparison for the knight prompt">
               <img id="comparison-image" src="assets/images/comparison_knight_results.jpg" alt="Qualitative comparison for the knight prompt">
-              <span class="figure-expand"><i data-lucide="maximize-2" aria-hidden="true"></i><span class="sr-only">Open full-size comparison</span></span>
             </button>
             <div class="method-key" aria-hidden="true">
               <span class="ours">Block3D</span><span>Cube</span><span>Trellis-text</span><span>AR3D-R1</span><span>ShapeLLM-omni</span>
@@ -311,7 +307,7 @@
              He, Yefei and Lin, Mingda and Zhao, Haoyu and
              He, Yuanyu and Chen, Donny Y. and Chen, Feng and
              Zhuang, Bohan},
-  journal = {arXiv preprint},
+  journal = {arXiv preprint arXiv:2608.19567},
   year    = {2026}
 }</code></pre>
         </div>
@@ -320,8 +316,6 @@
   </main>
 
   <footer class="site-footer">
-    <p class="footer-note"><sup>†</sup>Equal contribution. <sup>*</sup>Corresponding authors.</p>
-    <p class="footer-contact"><a href="mailto:wangweijie@zju.edu.cn">wangweijie@zju.edu.cn</a> &middot; <a href="mailto:chenfeng1271@gmail.com">chenfeng1271@gmail.com</a></p>
     <p>&copy; 2026 Block3D &nbsp;&middot;&nbsp; ZIP Lab</p>
   </footer>
 
