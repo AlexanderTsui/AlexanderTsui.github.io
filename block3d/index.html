@@ -54,7 +54,7 @@
         <h1 id="hero-title"><span>Block3D</span> Efficient Text-to-3D Generation via Block-Wise Diffusion</h1>
         <p class="hero-authors">
           <span class="author">Bowen Cui<sup>1,†</sup>,</span>
-          <span class="author">Weijie Wang<sup>1,†,‡</sup>,</span>
+          <span class="author">Weijie Wang<sup>1,†,*</sup>,</span>
           <span class="author">Zeyu Zhang<sup>1</sup>,</span>
           <span class="author">Yefei He<sup>1</sup>,</span>
           <span class="author">Mingda Lin<sup>1</sup>,</span>
@@ -62,7 +62,7 @@
           <span class="author">Yuanyu He<sup>1</sup>,</span>
           <span class="author">Donny Y. Chen<sup>2</sup>,</span>
           <span class="author">Feng Chen<sup>3,*</sup>,</span>
-          <span class="author">Bohan Zhuang<sup>1,*</sup></span>
+          <span class="author">Bohan Zhuang<sup>1</sup></span>
         </p>
         <p class="hero-affiliations">
           <span><sup>1</sup>ZIP Lab, Zhejiang University</span> &middot;
@@ -125,7 +125,7 @@
         <p class="abstract-copy">While text-to-3D generation has advanced rapidly, achieving high geometric fidelity at low inference cost remains challenging. Existing methods either decode discrete shape tokens autoregressively or iteratively refine global 3D representations with diffusion or flow models. Autoregressive decoding is sequential and cannot revise errors, whereas diffusion and flow-matching models repeatedly process the full representation.</p>
         <p class="abstract-copy">We propose <strong>Block3D</strong>, a block-wise diffusion framework that partitions the discrete shape-token sequence into contiguous blocks, generates the blocks autoregressively, and jointly denoises all tokens within the current block. Confidence-guided intra-block correction revises low-confidence tokens before each block is finalized. On a held-out set from TRELLIS-500K, Block3D reduces mean end-to-end generation time from 25.71 seconds to 4.99 seconds, achieving a 5.15&times; speedup over the fine-tuned autoregressive baseline without sacrificing geometric fidelity.</p>
         <div class="abstract-contact" aria-label="Project contacts">
-          <p><span class="abstract-contact-label">Project leader</span> Weijie Wang: <a href="mailto:wangweijie@zju.edu.cn">wangweijie@zju.edu.cn</a></p>
+          <p><span class="abstract-contact-label">Corresponding authors</span> Weijie Wang: <a href="mailto:wangweijie@zju.edu.cn">wangweijie@zju.edu.cn</a>; Feng Chen: <a href="mailto:chenfeng1271@gmail.com">chenfeng1271@gmail.com</a></p>
         </div>
       </div>
       <div class="metric-strip section-inner wide" aria-label="Key results">
@@ -320,8 +320,8 @@
   </main>
 
   <footer class="site-footer">
-    <p class="footer-note"><sup>†</sup>Equal contribution. <sup>‡</sup>Project leader. <sup>*</sup>Corresponding authors.</p>
-    <p class="footer-contact"><a href="mailto:bohan.zhuang@zju.edu.cn">bohan.zhuang@zju.edu.cn</a> &middot; <a href="mailto:chenfeng1271@gmail.com">chenfeng1271@gmail.com</a> &middot; <a href="mailto:wangweijie@zju.edu.cn">wangweijie@zju.edu.cn</a></p>
+    <p class="footer-note"><sup>†</sup>Equal contribution. <sup>*</sup>Corresponding authors.</p>
+    <p class="footer-contact"><a href="mailto:wangweijie@zju.edu.cn">wangweijie@zju.edu.cn</a> &middot; <a href="mailto:chenfeng1271@gmail.com">chenfeng1271@gmail.com</a></p>
     <p>&copy; 2026 Block3D &nbsp;&middot;&nbsp; ZIP Lab</p>
   </footer>
 
