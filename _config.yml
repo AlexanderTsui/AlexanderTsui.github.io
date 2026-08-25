@@ -9,10 +9,10 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "Bowen Cui"
+title                    : "Bowen Cui (崔博文) - Homepage"
 title_separator          : "-"
 name                     : &name "Bowen Cui"
-description              : &description "Undergraduate researcher in 3D generation, world models, and robotic perception."   # Update this with a general description of your site, this is the default if not overridden by a page
+description              : &description "Bowen Cui (崔博文) is an undergraduate researcher at Xi'an Jiaotong University working on 3D generation, world models, video generation, and robotic perception."   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://alexandertsui.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -36,7 +36,7 @@ author:
   # Academic websites
   academia         : # URL
   arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    :
+  googlescholar    : "https://scholar.google.com/citations?hl=zh-CN&view_op=list_works&gmla=AKCpqFziz_aj2qK4o8Gpdf9pZjQnTV4zEaCrndIswHgY5JtF-I5EBCjNCyGCrtEiI8sm7aLLLIyvW00gDZ8p5hEh4pNentE&user=dEnRGFMAAAAJ"
   inspire-hep      : # URL
   impactstory      : # URL
   orcid            :
@@ -144,14 +144,16 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 :  # Social media default site image
-og_description           :  # Social media default site image description
+og_image                 : "profile.jpg" # Social media and search preview image
+og_description           : *description
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
-  links: # An array of links to social media profiles
+  type                   : "Person"
+  name                   : "Bowen Cui (崔博文)"
+  links:
+    - "https://github.com/AlexanderTsui"
+    - "https://scholar.google.com/citations?hl=zh-CN&view_op=list_works&gmla=AKCpqFziz_aj2qK4o8Gpdf9pZjQnTV4zEaCrndIswHgY5JtF-I5EBCjNCyGCrtEiI8sm7aLLLIyvW00gDZ8p5hEh4pNentE&user=dEnRGFMAAAAJ"
 
 
 # Analytics

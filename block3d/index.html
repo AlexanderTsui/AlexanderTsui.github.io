@@ -47,14 +47,15 @@
 
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">
-      <img class="hero-backdrop" src="assets/images/arena_views.jpg" alt="Block3D generated assets assembled into a gladiator arena">
+      <video class="hero-backdrop" autoplay loop muted playsinline preload="auto" poster="assets/images/arena_views.jpg" aria-label="Block3D generated assets assembled into a gladiator arena">
+        <source src="assets/video/block3d_assembly_fixed_1080p.mp4" type="video/mp4">
+      </video>
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-content">
-        <p class="venue-badge">Project Page</p>
         <h1 id="hero-title"><span>Block3D</span> Efficient Text-to-3D Generation via Block-Wise Diffusion</h1>
         <p class="hero-authors">
           <span class="author">Bowen Cui<sup>1,†</sup>,</span>
-          <span class="author">Weijie Wang<sup>1,†,‡</sup>,</span>
+          <span class="author">Weijie Wang<sup>1,†,*</sup>,</span>
           <span class="author">Zeyu Zhang<sup>1</sup>,</span>
           <span class="author">Yefei He<sup>1</sup>,</span>
           <span class="author">Mingda Lin<sup>1</sup>,</span>
@@ -62,21 +63,23 @@
           <span class="author">Yuanyu He<sup>1</sup>,</span>
           <span class="author">Donny Y. Chen<sup>2</sup>,</span>
           <span class="author">Feng Chen<sup>3,*</sup>,</span>
-          <span class="author">Bohan Zhuang<sup>1,*</sup></span>
+          <span class="author">Bohan Zhuang<sup>1</sup></span>
         </p>
         <p class="hero-affiliations">
-          <span><sup>1</sup>Zhejiang University</span> &middot;
+          <span><sup>1</sup>ZIP Lab, Zhejiang University</span> &middot;
           <span><sup>2</sup>Monash University</span> &middot;
           <span><sup>3</sup>University of Adelaide</span>
         </p>
+        <p class="hero-contribution"><sup>†</sup>Equal contribution. <sup>*</sup>Corresponding authors.</p>
+        <p class="hero-contact"><a href="mailto:wangweijie@zju.edu.cn">wangweijie@zju.edu.cn</a> &middot; <a href="mailto:chenfeng1271@gmail.com">chenfeng1271@gmail.com</a></p>
         <div class="resource-row" aria-label="Project resources">
-          <a class="resource-button resource-primary" href="https://arxiv.org/abs/2608.19567" target="_blank" rel="noreferrer">
+          <a class="resource-button resource-primary" href="assets/papers/block3d.pdf" target="_blank" rel="noreferrer">
             <i data-lucide="file-text" aria-hidden="true"></i><span>Paper</span>
           </a>
           <a class="resource-button" href="#video">
             <i data-lucide="film" aria-hidden="true"></i><span>Video</span>
           </a>
-          <a class="resource-button" href="https://github.com/AlexanderTsui/Block3D" target="_blank" rel="noreferrer" aria-label="View Block3D source code on GitHub">
+          <a class="resource-button" href="https://github.com/ziplab/Block3D" target="_blank" rel="noreferrer" aria-label="View Block3D source code on GitHub">
             <i data-lucide="github" aria-hidden="true"></i><span>Code</span>
           </a>
           <a class="resource-button" href="https://huggingface.co/papers/2608.19567" target="_blank" rel="noreferrer" aria-label="View Block3D on Hugging Face">
@@ -98,23 +101,6 @@
             Your browser does not support the video element.
           </video>
         </div>
-        <div class="chapter-row" aria-label="Video chapters">
-          <button class="chapter is-active" type="button" data-time="3">
-            <img src="assets/video/frame_03.jpg" alt=""><span><strong>00:03</strong> Overview</span>
-          </button>
-          <button class="chapter" type="button" data-time="17">
-            <img src="assets/video/frame_17.jpg" alt=""><span><strong>00:17</strong> Block-causal decoding</span>
-          </button>
-          <button class="chapter" type="button" data-time="32">
-            <img src="assets/video/frame_32.jpg" alt=""><span><strong>00:32</strong> Confidence correction</span>
-          </button>
-          <button class="chapter" type="button" data-time="47">
-            <img src="assets/video/frame_47.jpg" alt=""><span><strong>00:47</strong> Comparisons</span>
-          </button>
-          <button class="chapter" type="button" data-time="55">
-            <img src="assets/video/frame_55.jpg" alt=""><span><strong>00:55</strong> More results</span>
-          </button>
-        </div>
       </div>
     </section>
 
@@ -124,9 +110,6 @@
         <h2>Fast generation without giving up correction</h2>
         <p class="abstract-copy">While text-to-3D generation has advanced rapidly, achieving high geometric fidelity at low inference cost remains challenging. Existing methods either decode discrete shape tokens autoregressively or iteratively refine global 3D representations with diffusion or flow models. Autoregressive decoding is sequential and cannot revise errors, whereas diffusion and flow-matching models repeatedly process the full representation.</p>
         <p class="abstract-copy">We propose <strong>Block3D</strong>, a block-wise diffusion framework that partitions the discrete shape-token sequence into contiguous blocks, generates the blocks autoregressively, and jointly denoises all tokens within the current block. Confidence-guided intra-block correction revises low-confidence tokens before each block is finalized. On a held-out set from TRELLIS-500K, Block3D reduces mean end-to-end generation time from 25.71 seconds to 4.99 seconds, achieving a 5.15&times; speedup over the fine-tuned autoregressive baseline without sacrificing geometric fidelity.</p>
-        <div class="abstract-contact" aria-label="Project contacts">
-          <p><span class="abstract-contact-label">Project leader</span> Weijie Wang: <a href="mailto:wangweijie@zju.edu.cn">wangweijie@zju.edu.cn</a></p>
-        </div>
       </div>
       <div class="metric-strip section-inner wide" aria-label="Key results">
         <div><strong>5.15&times;</strong><span>faster than AR</span></div>
@@ -167,7 +150,10 @@
           </div>
 
           <div class="mesh-stage" id="mesh-stage">
-            <img class="mesh-poster" id="mesh-poster" src="assets/models/additional/standing-male.png" alt="Preview of the standing figurine mesh">
+            <video class="mesh-preview" id="mesh-preview" autoplay loop muted playsinline preload="auto" poster="assets/models/additional/standing-male.png" aria-label="Preview of a Block3D generated mesh">
+              <source src="assets/video/mesh_turntables/standing-male.mp4" type="video/mp4">
+            </video>
+            <img class="mesh-poster" id="mesh-poster" src="assets/models/additional/standing-male.png" alt="Preview of the standing figurine mesh" hidden>
             <button class="mesh-load-button" type="button" data-load-mesh>
               <i data-lucide="box" aria-hidden="true"></i><span>Load 3D</span>
             </button>
@@ -175,31 +161,31 @@
           </div>
 
           <div class="mesh-selector" role="tablist" aria-label="Generated meshes">
-            <button class="mesh-option is-active" type="button" role="tab" aria-selected="true" data-model="standing-male" data-src="assets/models/additional/standing-male.glb" data-poster="assets/models/additional/standing-male.png" data-title="Standing figurine" data-color="#ee9baa">
+            <button class="mesh-option is-active" type="button" role="tab" aria-selected="true" data-model="standing-male" data-src="assets/models/additional/standing-male.glb" data-video="assets/video/mesh_turntables/standing-male.mp4" data-poster="assets/models/additional/standing-male.png" data-title="Standing figurine" data-color="#ee9baa">
               <img src="assets/models/additional/standing-male.png" alt=""><span>Standing figurine</span>
             </button>
-            <button class="mesh-option" type="button" role="tab" aria-selected="false" data-model="female-statue" data-src="assets/models/additional/female-statue.glb" data-poster="assets/models/additional/female-statue.png" data-title="Female statue" data-color="#ee9baa">
+            <button class="mesh-option" type="button" role="tab" aria-selected="false" data-model="female-statue" data-src="assets/models/additional/female-statue.glb" data-video="assets/video/mesh_turntables/female-statue.mp4" data-poster="assets/models/additional/female-statue.png" data-title="Female statue" data-color="#ee9baa">
               <img src="assets/models/additional/female-statue.png" alt=""><span>Female statue</span>
             </button>
-            <button class="mesh-option" type="button" role="tab" aria-selected="false" data-model="throne-figure" data-src="assets/models/additional/throne-figure.glb" data-poster="assets/models/additional/throne-figure.png" data-title="Throne figure" data-color="#ee9baa">
+            <button class="mesh-option" type="button" role="tab" aria-selected="false" data-model="throne-figure" data-src="assets/models/additional/throne-figure.glb" data-video="assets/video/mesh_turntables/throne-figure.mp4" data-poster="assets/models/additional/throne-figure.png" data-title="Throne figure" data-color="#ee9baa">
               <img src="assets/models/additional/throne-figure.png" alt=""><span>Throne figure</span>
             </button>
-            <button class="mesh-option" type="button" role="tab" aria-selected="false" data-model="gem-ring" data-src="assets/models/additional/gem-ring.glb" data-poster="assets/models/additional/gem-ring.png" data-title="Gemstone ring" data-color="#9dbbea">
+            <button class="mesh-option" type="button" role="tab" aria-selected="false" data-model="gem-ring" data-src="assets/models/additional/gem-ring.glb" data-video="assets/video/mesh_turntables/gem-ring.mp4" data-poster="assets/models/additional/gem-ring.png" data-title="Gemstone ring" data-color="#9dbbea">
               <img src="assets/models/additional/gem-ring.png" alt=""><span>Gemstone ring</span>
             </button>
-            <button class="mesh-option" type="button" role="tab" aria-selected="false" data-model="bunny-hat" data-src="assets/models/additional/bunny-hat.glb" data-poster="assets/models/additional/bunny-hat.png" data-title="Bunny-ear hat" data-color="#9dbbea">
+            <button class="mesh-option" type="button" role="tab" aria-selected="false" data-model="bunny-hat" data-src="assets/models/additional/bunny-hat.glb" data-video="assets/video/mesh_turntables/bunny-hat.mp4" data-poster="assets/models/additional/bunny-hat.png" data-title="Bunny-ear hat" data-color="#9dbbea">
               <img src="assets/models/additional/bunny-hat.png" alt=""><span>Bunny-ear hat</span>
             </button>
-            <button class="mesh-option" type="button" role="tab" aria-selected="false" data-model="chess-king" data-src="assets/models/additional/chess-king.glb" data-poster="assets/models/additional/chess-king.png" data-title="King chess piece" data-color="#9dbbea">
+            <button class="mesh-option" type="button" role="tab" aria-selected="false" data-model="chess-king" data-src="assets/models/additional/chess-king.glb" data-video="assets/video/mesh_turntables/chess-king.mp4" data-poster="assets/models/additional/chess-king.png" data-title="King chess piece" data-color="#9dbbea">
               <img src="assets/models/additional/chess-king.png" alt=""><span>King chess piece</span>
             </button>
-            <button class="mesh-option" type="button" role="tab" aria-selected="false" data-model="armadillo" data-src="assets/models/additional/armadillo.glb" data-poster="assets/models/additional/armadillo.png" data-title="Segmented armadillo" data-color="#e6ad74">
+            <button class="mesh-option" type="button" role="tab" aria-selected="false" data-model="armadillo" data-src="assets/models/additional/armadillo.glb" data-video="assets/video/mesh_turntables/armadillo.mp4" data-poster="assets/models/additional/armadillo.png" data-title="Segmented armadillo" data-color="#e6ad74">
               <img src="assets/models/additional/armadillo.png" alt=""><span>Segmented armadillo</span>
             </button>
-            <button class="mesh-option" type="button" role="tab" aria-selected="false" data-model="angry-heart" data-src="assets/models/additional/angry-heart.glb" data-poster="assets/models/additional/angry-heart.png" data-title="Angry heart" data-color="#e6ad74">
+            <button class="mesh-option" type="button" role="tab" aria-selected="false" data-model="angry-heart" data-src="assets/models/additional/angry-heart.glb" data-video="assets/video/mesh_turntables/angry-heart.mp4" data-poster="assets/models/additional/angry-heart.png" data-title="Angry heart" data-color="#e6ad74">
               <img src="assets/models/additional/angry-heart.png" alt=""><span>Angry heart</span>
             </button>
-            <button class="mesh-option" type="button" role="tab" aria-selected="false" data-model="two-headed-griffon" data-src="assets/models/additional/two-headed-griffon.glb" data-poster="assets/models/additional/two-headed-griffon.png" data-title="Two-headed griffon" data-color="#e6ad74">
+            <button class="mesh-option" type="button" role="tab" aria-selected="false" data-model="two-headed-griffon" data-src="assets/models/additional/two-headed-griffon.glb" data-video="assets/video/mesh_turntables/two-headed-griffon.mp4" data-poster="assets/models/additional/two-headed-griffon.png" data-title="Two-headed griffon" data-color="#e6ad74">
               <img src="assets/models/additional/two-headed-griffon.png" alt=""><span>Two-headed griffon</span>
             </button>
           </div>
@@ -209,12 +195,8 @@
 
     <section class="section comparisons-section" id="comparisons">
       <div class="section-inner wide">
-        <div class="section-heading split-heading">
-          <div>
-            <p class="section-label">Comparisons</p>
-            <h2>Quality across prompts</h2>
-          </div>
-          <p>Front and back views use the same camera and normalization for every method.</p>
+        <div class="section-heading">
+          <h2>Quality across prompts</h2>
         </div>
 
         <div class="prompt-tabs" role="tablist" aria-label="Qualitative examples">
@@ -229,7 +211,6 @@
           <div class="comparison-media">
             <button class="figure-button comparison-figure" type="button" data-zoom-src="assets/images/comparison_knight_results.jpg" data-zoom-alt="Qualitative comparison for the knight prompt">
               <img id="comparison-image" src="assets/images/comparison_knight_results.jpg" alt="Qualitative comparison for the knight prompt">
-              <span class="figure-expand"><i data-lucide="maximize-2" aria-hidden="true"></i><span class="sr-only">Open full-size comparison</span></span>
             </button>
             <div class="method-key" aria-hidden="true">
               <span class="ours">Block3D</span><span>Cube</span><span>Trellis-text</span><span>AR3D-R1</span><span>ShapeLLM-omni</span>
@@ -311,7 +292,7 @@
              He, Yefei and Lin, Mingda and Zhao, Haoyu and
              He, Yuanyu and Chen, Donny Y. and Chen, Feng and
              Zhuang, Bohan},
-  journal = {arXiv preprint},
+  journal = {arXiv preprint arXiv:2608.19567},
   year    = {2026}
 }</code></pre>
         </div>
@@ -320,9 +301,7 @@
   </main>
 
   <footer class="site-footer">
-    <p class="footer-note"><sup>†</sup>Equal contribution. <sup>‡</sup>Project leader. <sup>*</sup>Corresponding authors.</p>
-    <p class="footer-contact"><a href="mailto:bohan.zhuang@zju.edu.cn">bohan.zhuang@zju.edu.cn</a> &middot; <a href="mailto:chenfeng1271@gmail.com">chenfeng1271@gmail.com</a> &middot; <a href="mailto:wangweijie@zju.edu.cn">wangweijie@zju.edu.cn</a></p>
-    <p>&copy; 2026 Block3D &nbsp;&middot;&nbsp; Zhejiang University</p>
+    <p>&copy; 2026 Block3D &nbsp;&middot;&nbsp; ZIP Lab</p>
   </footer>
 
   <dialog class="image-modal" aria-label="Full-size figure">

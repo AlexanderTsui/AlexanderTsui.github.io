@@ -38,7 +38,7 @@ const methodFigures = {
     caption: "Block3D retains causal structure across blocks while enabling parallel, bidirectional denoising within each active block."
   },
   pipeline: {
-    src: "assets/images/pipeline.jpg",
+    src: "assets/images/pipeline_02.png",
     alt: "Block3D training and inference pipeline",
     caption: "Training uses a block-causal visibility pattern; inference alternates masked-token recovery with confidence-guided token correction."
   }
@@ -73,27 +73,6 @@ nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", () =>
   nav.classList.remove("is-open");
   refreshIcons();
 }));
-
-const video = document.querySelector("#project-video");
-const chapters = [...document.querySelectorAll(".chapter")];
-
-chapters.forEach((chapter) => {
-  chapter.addEventListener("click", async () => {
-    const seek = () => {
-      video.currentTime = Number(chapter.dataset.time);
-      video.play().catch(() => {});
-    };
-
-    chapters.forEach((item) => item.classList.toggle("is-active", item === chapter));
-    if (video.readyState >= 1) seek();
-    else video.addEventListener("loadedmetadata", seek, { once: true });
-  });
-});
-
-video.addEventListener("timeupdate", () => {
-  const active = [...chapters].reverse().find((chapter) => video.currentTime >= Number(chapter.dataset.time));
-  if (active) chapters.forEach((chapter) => chapter.classList.toggle("is-active", chapter === active));
-});
 
 document.querySelectorAll("[data-example]").forEach((button) => {
   button.addEventListener("click", () => {
@@ -173,6 +152,7 @@ document.querySelector("[data-copy]").addEventListener("click", async (event) =>
 });
 
 const meshStage = document.querySelector("#mesh-stage");
+const meshPreview = document.querySelector("#mesh-preview");
 const meshPoster = document.querySelector("#mesh-poster");
 const meshTitle = document.querySelector("#mesh-title");
 const meshStatus = document.querySelector("[data-mesh-status]");
@@ -201,6 +181,17 @@ const gltfLoader = new GLTFLoader();
 gltfLoader.setDRACOLoader(dracoLoader);
 
 const selectedModelButton = () => document.querySelector("[data-model].is-active");
+
+function updateMeshPreview(button) {
+  const source = meshPreview.querySelector("source");
+  const videoSrc = button.dataset.video;
+  if (!source || !videoSrc || source.getAttribute("src") === videoSrc) return;
+
+  source.src = videoSrc;
+  meshPreview.poster = button.dataset.poster;
+  meshPreview.load();
+  meshPreview.play().catch(() => {});
+}
 
 function initMeshViewer() {
   if (renderer) return;
@@ -286,10 +277,33 @@ function disposeActiveModel() {
 
 function resetCamera() {
   if (!camera || !controls) return;
-  camera.position.set(3.2, 2.2, 4.2);
+  const viewSize = activeModel
+    ? new THREE.Box3().setFromObject(activeModel).getSize(new THREE.Vector3())
+    : new THREE.Vector3(2.55, 2.55, 2.55);
+  const verticalFov = THREE.MathUtils.degToRad(camera.fov);
+  const horizontalFov = 2 * Math.atan(Math.tan(verticalFov / 2) * camera.aspect);
+  const verticalDistance = viewSize.y / (2 * Math.tan(verticalFov / 2));
+  const horizontalDistance = Math.max(viewSize.x, viewSize.z) / (2 * Math.tan(horizontalFov / 2));
+  const distance = Math.max(verticalDistance, horizontalDistance) * 1.28;
+  const direction = new THREE.Vector3(3.2, 2.2, 4.2).normalize();
+  camera.position.copy(direction.multiplyScalar(distance));
   controls.target.set(0, 0, 0);
   controls.update();
 }
+
+function showMeshPreview() {
+  meshPreview.hidden = false;
+  meshPoster.hidden = true;
+  meshLoadButton.hidden = false;
+}
+
+function showPosterFallback() {
+  meshPreview.hidden = true;
+  meshPoster.hidden = false;
+  meshLoadButton.hidden = false;
+}
+
+meshPreview.addEventListener("error", showPosterFallback);
 
 function updateModelMaterials() {
   if (!activeModel) return;
@@ -345,14 +359,14 @@ async function loadSelectedModel() {
     const centeredBounds = new THREE.Box3().setFromObject(activeModel);
     meshFloor.position.y = centeredBounds.min.y - 0.04;
 
+    meshPreview.hidden = true;
     meshPoster.hidden = true;
     meshLoadButton.hidden = true;
     meshStatus.textContent = button.dataset.title;
     resetCamera();
   } catch (error) {
     console.error("Unable to load mesh", error);
-    meshPoster.hidden = false;
-    meshLoadButton.hidden = false;
+    showMeshPreview();
     meshStatus.textContent = "3D asset unavailable";
   } finally {
     if (requestId === activeRequest) {
@@ -376,6 +390,7 @@ modelButtons.forEach((button) => {
     meshTitle.textContent = button.dataset.title;
     meshPoster.src = button.dataset.poster;
     meshPoster.alt = `Preview of the ${button.dataset.title} mesh`;
+    updateMeshPreview(button);
 
     if (renderer && activeModelKey !== button.dataset.model) {
       isLoading = false;
