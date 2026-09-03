@@ -58,7 +58,16 @@ I am currently a remote research intern at **CAD&CG Lab / ZIP Lab, Zhejiang Univ
       </div>
     </div>
   </div>
-  <div class="paper-box paper-box--text-only">
+  <div class="paper-box paper-box--ziptok3d">
+    <div class="paper-box-image">
+      <div class="paper-box-video-frame">
+        <a href="https://forthloth.github.io/ziptok3d/" target="_blank" rel="noreferrer" aria-label="Open the ZipTok3D project page">
+          <video class="paper-box-video" autoplay muted loop playsinline preload="metadata" poster="https://forthloth.github.io/ziptok3d/assets/hero-poster-compact.png" aria-hidden="true">
+            <source src="https://forthloth.github.io/ziptok3d/assets/ziptok3d-demo-audio.mp4" type="video/mp4">
+          </video>
+        </a>
+      </div>
+    </div>
     <div class="paper-box-text">
       <p>
         <a class="PaperTitle" href="https://arxiv.org/abs/2609.01740" target="_blank" rel="noreferrer"><b>ZipTok3D: High-Fidelity 3D Tokenization with Compact Token Prefixes</b></a><br>
@@ -67,7 +76,9 @@ I am currently a remote research intern at **CAD&CG Lab / ZIP Lab, Zhejiang Univ
         Zhejiang University
       </p>
       <div class="paper-links" role="group" aria-label="ZipTok3D resources">
+        <a class="paper-link paper-link--project" href="https://forthloth.github.io/ziptok3d/" target="_blank" rel="noreferrer"><i class="fas fa-globe" aria-hidden="true"></i><span>Project Page</span></a>
         <a class="paper-link paper-link--pdf" href="https://arxiv.org/abs/2609.01740" target="_blank" rel="noreferrer"><span class="paper-link__arxiv-mark" aria-hidden="true">arXiv</span><span>Paper</span></a>
+        <a class="paper-link paper-link--project" href="https://forthloth.github.io/ziptok3d/#top" target="_blank" rel="noreferrer"><i class="fas fa-film" aria-hidden="true"></i><span>Video</span></a>
       </div>
     </div>
   </div>
