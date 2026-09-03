@@ -58,6 +58,19 @@ I am currently a remote research intern at **CAD&CG Lab / ZIP Lab, Zhejiang Univ
       </div>
     </div>
   </div>
+  <div class="paper-box paper-box--text-only">
+    <div class="paper-box-text">
+      <p>
+        <a class="PaperTitle" href="https://arxiv.org/abs/2609.01740" target="_blank" rel="noreferrer"><b>ZipTok3D: High-Fidelity 3D Tokenization with Compact Token Prefixes</b></a><br>
+        <span class="venue-card">arXiv, 2026</span><br>
+        Mingda Lin, Weijie Wang, Zeyu Zhang, <strong><span class="author-highlight">Bowen Cui</span></strong>, Yefei He, Haoyu Zhao, Yuanyu He, Donny Y. Chen, Feng Chen, Bohan Zhuang<br>
+        Zhejiang University
+      </p>
+      <div class="paper-links" role="group" aria-label="ZipTok3D resources">
+        <a class="paper-link paper-link--pdf" href="https://arxiv.org/abs/2609.01740" target="_blank" rel="noreferrer"><span class="paper-link__arxiv-mark" aria-hidden="true">arXiv</span><span>Paper</span></a>
+      </div>
+    </div>
+  </div>
 </div>
 
 <span class="anchor" id="internship"></span>
