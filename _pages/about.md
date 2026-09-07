@@ -23,6 +23,7 @@ I am currently a remote research intern at **CAD&CG Lab / ZIP Lab, Zhejiang Univ
 # <i class="fas fa-newspaper section-icon" aria-hidden="true"></i> News
 
 <ul class="home-news">
+  <li><em>2026.09</em>: Released <strong>ZipTok3D</strong>, a high-fidelity 3D tokenizer with compact token prefixes.</li>
   <li><em>2026.08</em>: Released <strong>Block3D</strong>, an efficient text-to-3D generation framework based on block-wise diffusion.</li>
   <li><em>2025.12</em>: Joined <strong>Zhejiang University CAD&amp;CG Lab / ZIP Lab</strong> as a remote research intern, focusing on 3D world models and text-to-3D generation.</li>
   <li><em>2025.10</em>: Led the team to a <strong>National Second Prize</strong> in the 2025 China Robot Competition &amp; RoboCup China, Underwater Robot Water Cruise track.</li>
