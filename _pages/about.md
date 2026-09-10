@@ -55,7 +55,12 @@ I am currently a remote research intern at **CAD&CG Lab / ZIP Lab, Zhejiang Univ
       <div class="paper-links" role="group" aria-label="Block3D resources">
         <a class="paper-link paper-link--project" href="/block3d/"><i class="fas fa-globe" aria-hidden="true"></i><span>Project Page</span></a>
         <a class="paper-link paper-link--pdf" href="https://arxiv.org/abs/2608.19567" target="_blank" rel="noreferrer"><span class="paper-link__arxiv-mark" aria-hidden="true">arXiv</span><span>Paper</span></a>
-        <a class="paper-link paper-link--project" href="/block3d/#video"><i class="fas fa-film" aria-hidden="true"></i><span>Video</span></a>
+        <a class="paper-link paper-link--code" href="https://github.com/ziplab/Block3D" target="_blank" rel="noreferrer" data-github-repo="ziplab/Block3D">
+          <i class="fab fa-github" aria-hidden="true"></i><span>Code</span>
+          <span class="paper-link__stars" data-github-star-display role="img" aria-label="82 GitHub stars">
+            <i class="fas fa-star" aria-hidden="true"></i><span data-github-star-count>82</span>
+          </span>
+        </a>
       </div>
     </div>
   </div>
@@ -79,7 +84,12 @@ I am currently a remote research intern at **CAD&CG Lab / ZIP Lab, Zhejiang Univ
       <div class="paper-links" role="group" aria-label="ZipTok3D resources">
         <a class="paper-link paper-link--project" href="https://forthloth.github.io/ziptok3d/" target="_blank" rel="noreferrer"><i class="fas fa-globe" aria-hidden="true"></i><span>Project Page</span></a>
         <a class="paper-link paper-link--pdf" href="https://arxiv.org/abs/2609.01740" target="_blank" rel="noreferrer"><span class="paper-link__arxiv-mark" aria-hidden="true">arXiv</span><span>Paper</span></a>
-        <a class="paper-link paper-link--project" href="https://forthloth.github.io/ziptok3d/#top" target="_blank" rel="noreferrer"><i class="fas fa-film" aria-hidden="true"></i><span>Video</span></a>
+        <a class="paper-link paper-link--code" href="https://github.com/ziplab/ZipTok3D" target="_blank" rel="noreferrer" data-github-repo="ziplab/ZipTok3D">
+          <i class="fab fa-github" aria-hidden="true"></i><span>Code</span>
+          <span class="paper-link__stars" data-github-star-display role="img" aria-label="37 GitHub stars">
+            <i class="fas fa-star" aria-hidden="true"></i><span data-github-star-count>37</span>
+          </span>
+        </a>
       </div>
     </div>
   </div>
