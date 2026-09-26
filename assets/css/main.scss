@@ -560,6 +560,10 @@ body {
   color: var(--homepage-ink);
 }
 
+.author__avatar img {
+  border-radius: 0 !important;
+}
+
 .author__name {
   font-size: 1.3rem !important;
   font-weight: 700;
