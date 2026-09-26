@@ -1,7 +1,7 @@
 ---
 permalink: /
 title: ""
-description: "Bowen Cui (崔博文) is an undergraduate researcher at Xi'an Jiaotong University working on 3D generation, world models, video generation, and robotic perception."
+description: "Bowen Cui (崔博文) is an undergraduate researcher at Xi'an Jiaotong University and an incoming master's student at Zhejiang University, working on 3D generation, world models, video generation, and robotic perception."
 author_profile: true
 redirect_from:
   - /about/
@@ -14,7 +14,7 @@ redirect_from:
 
 Hi! I am **Bowen Cui (崔博文)**, an undergraduate student at **Xi'an Jiaotong University**, majoring in **Intelligent Manufacturing Engineering (Qian Xuesen Honors Class)** and **Computer Science and Technology**.
 
-I am currently a remote research intern at **CAD&CG Lab / ZIP Lab, Zhejiang University**, working on **3D world models** and **efficient 3D generation**. My research interests focus on **world models, 3D generation, video generation, point cloud understanding, and robotic perception**.
+From **December 2025 to August 2026**, I was a remote research intern at **CAD&CG Lab / ZIP Lab, Zhejiang University**, working on **3D world models** and **efficient 3D generation**. I will join the **School of Software Technology, Zhejiang University** as a master's student in **Fall 2027**. My research interests focus on **world models, 3D generation, video generation, point cloud understanding, and robotic perception**.
 
 <p class="home-callout">I am open to research discussions and collaboration. The best way to reach me is by email: <a href="mailto:alexandertsui1483@gmail.com">alexandertsui1483@gmail.com</a>.</p>
 
@@ -23,9 +23,10 @@ I am currently a remote research intern at **CAD&CG Lab / ZIP Lab, Zhejiang Univ
 # <i class="fas fa-newspaper section-icon" aria-hidden="true"></i> News
 
 <ul class="home-news">
+  <li><em>2027.09</em>: Will join the <strong>School of Software Technology, Zhejiang University</strong> as a master's student.</li>
   <li><em>2026.09</em>: Released <strong>ZipTok3D</strong>, a high-fidelity 3D tokenizer with compact token prefixes.</li>
   <li><em>2026.08</em>: Released <strong>Block3D</strong>, an efficient text-to-3D generation framework based on block-wise diffusion.</li>
-  <li><em>2025.12</em>: Joined <strong>Zhejiang University CAD&amp;CG Lab / ZIP Lab</strong> as a remote research intern, focusing on 3D world models and text-to-3D generation.</li>
+  <li><em>2026.08</em>: Completed my remote research internship at <strong>Zhejiang University CAD&amp;CG Lab / ZIP Lab</strong>, focusing on 3D world models and text-to-3D generation.</li>
   <li><em>2025.10</em>: Led the team to a <strong>National Second Prize</strong> in the 2025 China Robot Competition &amp; RoboCup China, Underwater Robot Water Cruise track.</li>
   <li><em>2024.11</em>: Won a <strong>National Second Prize</strong> in the 2024 China Robot Competition &amp; RoboCup China, Underwater Robot Water Cruise track.</li>
 </ul>
@@ -105,9 +106,9 @@ I am currently a remote research intern at **CAD&CG Lab / ZIP Lab, Zhejiang Univ
   </div>
   <div>
     <p class="entity-title"><strong>CAD&amp;CG Lab / ZIP Lab, Zhejiang University</strong></p>
-    <p class="entity-meta"><em>2025.12 - Present, Research Intern, Remote</em></p>
+    <p class="entity-meta"><em>2025.12 - 2026.08, Research Intern, Remote</em></p>
     <p>Research topics: 3D world models, text-to-3D generation, efficient generative modeling.</p>
-    <p>Current work: leading a 3D generation project and taking responsibility for algorithm design, implementation, data processing, model training, and evaluation.</p>
+    <p>Work completed: led a 3D generation project and took responsibility for algorithm design, implementation, data processing, model training, and evaluation.</p>
   </div>
 </div>
 
@@ -137,6 +138,17 @@ I am currently a remote research intern at **CAD&CG Lab / ZIP Lab, Zhejiang Univ
   </div>
 </div>
 
+<div class="entity-card">
+  <div class="entity-logo entity-logo--image">
+    <img src="/images/zju.png" alt="Zhejiang University logo">
+  </div>
+  <div>
+    <p class="entity-title"><strong>School of Software Technology, Zhejiang University</strong></p>
+    <p class="entity-meta"><em>2027.09 - expected, Hangzhou, China</em></p>
+    <p><strong>Incoming Master's Student</strong></p>
+  </div>
+</div>
+
 <span class="anchor" id="skills"></span>
 
 # <i class="fas fa-toolbox section-icon" aria-hidden="true"></i> Skills
@@ -158,5 +170,5 @@ I am currently a remote research intern at **CAD&CG Lab / ZIP Lab, Zhejiang Univ
 
 <hr>
 
-<p class="homepage-footer"><i>Latest updated in Aug. 2026</i></p>
+<p class="homepage-footer"><i>Latest updated in Sep. 2026</i></p>
 <p class="homepage-footer">© Bowen Cui</p>
