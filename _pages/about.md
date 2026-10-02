@@ -12,9 +12,9 @@ redirect_from:
 
 # <i class="fas fa-user section-icon" aria-hidden="true"></i> About Me
 
-Hi! I am **Bowen Cui (崔博文)**, an undergraduate student at **Xi'an Jiaotong University**, majoring in **Intelligent Manufacturing Engineering (Qian Xuesen Honors Class)** and **Computer Science and Technology**.
+Hi! I am **Bowen Cui (崔博文)**, an undergraduate student at Xi'an Jiaotong University, majoring in Intelligent Manufacturing Engineering (Qian Xuesen Honors Class) and Computer Science and Technology.
 
-From **December 2025 to August 2026**, I was a remote research intern at **CAD&CG Lab / ZIP Lab, Zhejiang University**, working on **3D world models** and **efficient 3D generation**. I will join the **School of Software Technology, Zhejiang University** as a master's student in **Fall 2027**. My research interests focus on **world models, 3D generation, video generation, point cloud understanding, and robotic perception**.
+From December 2025 to August 2026, I was a remote research intern at CAD&CG Lab / ZIP Lab, Zhejiang University, working on 3D world models and efficient 3D generation. I will join the School of Software Technology, Zhejiang University as a master's student in Fall 2027. My research interests focus on world models, 3D generation, video generation, point cloud understanding, and robotic perception.
 
 <p class="home-callout">I am open to research discussions and collaboration. The best way to reach me is by email: <a href="mailto:alexandertsui1483@gmail.com">alexandertsui1483@gmail.com</a>.</p>
 
