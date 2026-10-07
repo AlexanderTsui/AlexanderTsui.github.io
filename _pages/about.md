@@ -128,6 +128,17 @@ From December 2025 to August 2026, I was a remote research intern at CAD&CG Lab 
 
 <div class="entity-card">
   <div class="entity-logo entity-logo--image">
+    <img src="/images/zju.png" alt="Zhejiang University logo">
+  </div>
+  <div>
+    <p class="entity-title"><strong>Zhejiang University</strong></p>
+    <p class="entity-meta"><em>2027.09 - expected, Hangzhou, China</em></p>
+    <p><strong>Incoming Master's Student, School of Software Technology</strong></p>
+  </div>
+</div>
+
+<div class="entity-card">
+  <div class="entity-logo entity-logo--image">
     <img src="/images/xjtu.png" alt="Xi'an Jiaotong University logo">
   </div>
   <div>
@@ -135,17 +146,6 @@ From December 2025 to August 2026, I was a remote research intern at CAD&CG Lab 
     <p class="entity-meta"><em>2023.08 - 2027.06 expected, Xi'an, China</em></p>
     <p><strong>B.Eng. in Intelligent Manufacturing Engineering (Qian Xuesen Honors Class) / Computer Science and Technology</strong></p>
     <p>GPA: 87.97 / 100. Ranking: 11 / 29 in the Qian Xuesen Honors Class.</p>
-  </div>
-</div>
-
-<div class="entity-card">
-  <div class="entity-logo entity-logo--image">
-    <img src="/images/zju.png" alt="Zhejiang University logo">
-  </div>
-  <div>
-    <p class="entity-title"><strong>School of Software Technology, Zhejiang University</strong></p>
-    <p class="entity-meta"><em>2027.09 - expected, Hangzhou, China</em></p>
-    <p><strong>Incoming Master's Student</strong></p>
   </div>
 </div>
 
