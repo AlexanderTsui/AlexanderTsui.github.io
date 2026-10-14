@@ -145,7 +145,7 @@ From December 2025 to August 2026, I was a remote research intern at CAD&CG Lab 
     <p class="entity-title"><strong>Xi'an Jiaotong University</strong></p>
     <p class="entity-meta"><em>2023.08 - 2027.06 expected, Xi'an, China</em></p>
     <p><strong>B.Eng. in Intelligent Manufacturing Engineering (Qian Xuesen Honors Class) / Computer Science and Technology</strong></p>
-    <p>GPA: 87.97 / 100. Ranking: 11 / 29 in the Qian Xuesen Honors Class.</p>
+    <p>GPA: 89.68 / 100. Ranking: 8 / 29 in the Qian Xuesen Honors Class.</p>
   </div>
 </div>
 
