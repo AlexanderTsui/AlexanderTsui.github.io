@@ -80,7 +80,7 @@ From December 2025 to August 2026, I was a remote research intern at CAD&CG Lab 
         <a class="PaperTitle" href="https://arxiv.org/abs/2609.01740" target="_blank" rel="noreferrer"><b>ZipTok3D: High-Fidelity 3D Tokenization with Compact Token Prefixes</b></a><br>
         <span class="venue-card">arXiv, 2026</span><br>
         Mingda Lin, Weijie Wang, Zeyu Zhang, <strong><span class="author-highlight">Bowen Cui</span></strong>, Yefei He, Haoyu Zhao, Yuanyu He, Donny Y. Chen, Feng Chen, Bohan Zhuang<br>
-        Zhejiang University
+        CAD&amp;CG Lab / ZIP Lab, Zhejiang University
       </p>
       <div class="paper-links" role="group" aria-label="ZipTok3D resources">
         <a class="paper-link paper-link--project" href="https://forthloth.github.io/ziptok3d/" target="_blank" rel="noreferrer"><i class="fas fa-globe" aria-hidden="true"></i><span>Project Page</span></a>
