@@ -1,7 +1,7 @@
 ---
 permalink: /
 title: ""
-description: "Bowen Cui (崔博文) is an undergraduate researcher at Xi'an Jiaotong University and an incoming master's student at Zhejiang University, working on 3D generation, world models, video generation, and robotic perception."
+description: "Bowen Cui (崔博文) is an undergraduate researcher at Xi'an Jiaotong University, a Research Intern at AISphere (爱诗科技), and an incoming master's student at Zhejiang University, working on 3D generation, world models, video generation, and robotic perception."
 author_profile: true
 redirect_from:
   - /about/
