@@ -1,7 +1,7 @@
 ---
 permalink: /
 title: ""
-description: "Bowen Cui (崔博文) is an undergraduate researcher at Xi'an Jiaotong University, a Research Intern at AISphere (爱诗科技), and an incoming master's student at Zhejiang University, working on 3D generation, world models, video generation, and robotic perception."
+description: "Bowen Cui (崔博文) is an undergraduate researcher at Xi'an Jiaotong University, a Research Intern at AISphere, and an incoming master's student at Zhejiang University, working on 3D generation, world models, video generation, and robotic perception."
 author_profile: true
 redirect_from:
   - /about/
@@ -14,7 +14,7 @@ redirect_from:
 
 Hi! I am **Bowen Cui (崔博文)**, an undergraduate student at Xi'an Jiaotong University, majoring in Intelligent Manufacturing Engineering (Qian Xuesen Honors Class) and Computer Science and Technology.
 
-From December 2025 to August 2026, I was a remote research intern at CAD&CG Lab / ZIP Lab, Zhejiang University, working on 3D world models and efficient 3D generation. Since November 2026, I have been a Research Intern at AISphere (爱诗科技). I will join the School of Software Technology, Zhejiang University as a master's student in Fall 2027. My research interests focus on world models, 3D generation, video generation, point cloud understanding, and robotic perception.
+From December 2025 to August 2026, I was a remote research intern at CAD&CG Lab / ZIP Lab, Zhejiang University, working on 3D world models and efficient 3D generation. Since November 2026, I have been a Research Intern at AISphere. I will join the School of Software Technology, Zhejiang University as a master's student in Fall 2027. My research interests focus on world models, 3D generation, video generation, point cloud understanding, and robotic perception.
 
 <p class="home-callout">I am open to research discussions and collaboration. The best way to reach me is by email: <a href="mailto:alexandertsui1483@gmail.com">alexandertsui1483@gmail.com</a>.</p>
 
@@ -102,10 +102,10 @@ From December 2025 to August 2026, I was a remote research intern at CAD&CG Lab 
 
 <div class="entity-card">
   <div class="entity-logo entity-logo--image">
-    <img src="https://res-static.hc-cdn.cn/cloudbu-site/china/zh-cn/startup2024/logo0417/logo_%E7%94%BB%E6%9D%BF%201%20%E5%89%AF%E6%9C%AC%2033.png" alt="AISphere 爱诗科技 logo">
+    <img src="https://res-static.hc-cdn.cn/cloudbu-site/china/zh-cn/startup2024/logo0417/logo_%E7%94%BB%E6%9D%BF%201%20%E5%89%AF%E6%9C%AC%2033.png" alt="AISphere logo">
   </div>
   <div>
-    <p class="entity-title"><strong>AISphere (爱诗科技)</strong></p>
+    <p class="entity-title"><strong>AISphere</strong></p>
     <p class="entity-meta"><em>2026.11 - Present, Research Intern</em></p>
   </div>
 </div>
