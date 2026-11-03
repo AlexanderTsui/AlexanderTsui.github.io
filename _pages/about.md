@@ -107,6 +107,7 @@ I'm now a Research Intern at AISphere. I will join the School of Software Techno
   <div>
     <p class="entity-title"><strong>AISphere</strong></p>
     <p class="entity-meta"><em>2026.11 - Present, Research Intern</em></p>
+    <p>Research topics: Coding World Model.</p>
   </div>
 </div>
 
