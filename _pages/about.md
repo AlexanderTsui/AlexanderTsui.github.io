@@ -101,8 +101,8 @@ I'm now a Research Intern at AISphere. I will join the School of Software Techno
 # <i class="fas fa-briefcase section-icon" aria-hidden="true"></i> Intern Experience
 
 <div class="entity-card">
-  <div class="entity-logo entity-logo--image">
-    <img src="/images/aisphere-ai.svg" alt="AISphere logo">
+  <div class="entity-logo entity-logo--image" style="padding: 0;">
+    <img src="/images/aisphere-ai-original.png" alt="AISphere logo">
   </div>
   <div>
     <p class="entity-title"><strong>AISphere</strong></p>
