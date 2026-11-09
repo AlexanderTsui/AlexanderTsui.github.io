@@ -102,7 +102,7 @@ I'm now a Research Intern at AISphere. I will join the School of Software Techno
 
 <div class="entity-card">
   <div class="entity-logo entity-logo--image">
-    <img src="https://res-static.hc-cdn.cn/cloudbu-site/china/zh-cn/startup2024/logo0417/logo_%E7%94%BB%E6%9D%BF%201%20%E5%89%AF%E6%9C%AC%2033.png" alt="AISphere logo">
+    <img src="https://n.sinaimg.cn/sinakd20241218s/606/w900h506/20241218/2233-66c0a3a7cddc2532323722ce09a4136f.png" alt="AISphere logo">
   </div>
   <div>
     <p class="entity-title"><strong>AISphere</strong></p>
