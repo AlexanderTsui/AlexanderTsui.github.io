@@ -102,7 +102,7 @@ I'm now a Research Intern at AISphere. I will join the School of Software Techno
 
 <div class="entity-card">
   <div class="entity-logo entity-logo--image">
-    <img src="https://n.sinaimg.cn/sinakd20241218s/606/w900h506/20241218/2233-66c0a3a7cddc2532323722ce09a4136f.png" alt="AISphere logo">
+    <img src="/images/aisphere-ai.svg" alt="AISphere logo">
   </div>
   <div>
     <p class="entity-title"><strong>AISphere</strong></p>
