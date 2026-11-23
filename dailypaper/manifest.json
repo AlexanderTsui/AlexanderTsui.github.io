@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "latest": "history/2026-11-23.html",
+  "releases": [
+    {
+      "path": "history/2026-11-23.html",
+      "date": "2026-11-23",
+      "papers": 15,
+      "sha256": "7db406204a0bf80b83f9b27650f44d79e341fd22987db72ca2c4beca14c478e4"
+    }
+  ]
+}
