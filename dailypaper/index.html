@@ -74,6 +74,8 @@
 .public-paper-figure .figure-unavailable{padding:1rem 1.15rem;color:var(--muted);font-size:.88rem}
 .public-paper-figure .figure-frame>button[hidden],.public-paper-figure .figure-unavailable[hidden]{display:none !important}
 
+
+.public-release-toolbar{max-width:var(--max);margin:12px auto 0;display:flex;align-items:flex-start;gap:14px;padding:0 4px}.public-release-toolbar details{padding-top:7px;color:var(--muted);font-size:14px}.public-release-toolbar summary{cursor:pointer}.public-release-toolbar details p{margin-top:6px;font-size:13px}.public-release-toolbar .source-list{margin-bottom:0}@media(max-width:1280px){.public-release-toolbar{margin-inline:32px}}@media(max-width:720px){.public-release-toolbar{margin-inline:20px;padding:0}}
 </style>
   
   
@@ -93,8 +95,8 @@
       <span class="preview-badge">样例合集</span>
     </div>
   </header>
-  <main id="main" tabindex="-1"></main>
-  <section class="detail-shell" aria-labelledby="history"><details><summary id="history">历史版本下载</summary><ul class="source-list"><li><a href="./history/2026-11-23.html" download="paper-inbox.html">下载当日归档 HTML</a></li><li><a href="./history/2026-11-23.html" download="paper-inbox-2026-11-23.html">2026-11-23 · 15 篇</a></li></ul></details></section><footer class="site-footer">
+  <nav class="public-release-toolbar" aria-label="网页下载"><a class="button" id="public-download-current" href="./index.html" download="paper-inbox.html">下载当前 HTML</a><details><summary>历史存档</summary><p>历史存档保留当日页面，排版和图片可能与当前版本不同。</p><ul class="source-list"><li><a href="https://alexandertsui.github.io/dailypaper/history/2026-11-23.html" download="paper-inbox-2026-11-23.html">2026-11-23 · 15 篇</a></li></ul></details></nav><main id="main" tabindex="-1"></main>
+  <footer class="site-footer">
     <span>论文来信 <span class="footer-dot">·</span> Paper Inbox</span>
     <button class="text-button" data-action="references">版式参考</button>
   </footer>
@@ -426,5 +428,6 @@
 })();
 
 </script>
+<script>if(location.protocol==="file:") document.getElementById("public-download-current").href="https://alexandertsui.github.io/dailypaper/index.html";</script>
 </body>
 </html>
