@@ -81,6 +81,13 @@
 
 
 .public-release-toolbar{max-width:var(--max);margin:12px auto 0;display:flex;align-items:flex-start;gap:14px;padding:0 4px}.public-release-toolbar details{padding-top:7px;color:var(--muted);font-size:14px}.public-release-toolbar summary{cursor:pointer}.public-release-toolbar details p{margin-top:6px;font-size:13px}.public-release-toolbar .source-list{margin-bottom:0}@media(max-width:1280px){.public-release-toolbar{margin-inline:32px}}@media(max-width:720px){.public-release-toolbar{margin-inline:20px;padding:0}}
+
+.other-papers{margin-block:32px 0;padding-top:20px;border-top:1px solid var(--line,#e9e3da)}
+.other-papers[hidden]{display:none!important}
+.other-papers-toggle{width:max-content;max-width:100%;cursor:pointer;padding:7px 12px;border:1px solid var(--line,#e9e3da);border-radius:8px;font-weight:600;color:inherit;background:transparent}
+.other-papers-toggle:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.other-papers-count{margin-inline-start:.3em;font-size:.85em;opacity:.8}
+.other-papers-note{margin:12px 0 16px;font-size:.9em}
 </style>
   
   
@@ -282,7 +289,15 @@
   }
   function renderResults() {
     const result = filteredPapers();
-    document.querySelector('#paper-grid').innerHTML = result.length ? result.map(card).join('') : emptyState();
+    const hasArxiv = paper => /^(?:\d{4}\.\d{4,5}|[a-z.-]+\/\d{7})(?:v\d+)?$/i.test(paper.arxivId || '');
+    const arxiv = result.filter(hasArxiv);
+    const other = result.filter(paper => !hasArxiv(paper));
+    document.querySelector('#paper-grid').innerHTML = arxiv.length ? arxiv.map(card).join('') : result.length ? '' : emptyState();
+    const otherSection = document.querySelector('#other-papers');
+    otherSection.hidden = !other.length;
+    if (!other.length) otherSection.open = false;
+    document.querySelector('#other-papers-count').textContent = String(other.length);
+    document.querySelector('#other-paper-grid').innerHTML = other.map(card).join('');
     document.querySelector('#result-summary').innerHTML = `共 <strong>${result.length}</strong> 篇论文${state.q ? ` · 搜索“${esc(state.q)}”` : ''}`;
     document.querySelectorAll('[data-source]').forEach(el => el.setAttribute('aria-pressed', el.dataset.source === state.source));
     document.querySelector('#clear-search').hidden = !state.q;
@@ -300,6 +315,11 @@
       </div>
       <div class="results-header"><p id="result-summary" class="result-summary" aria-live="polite"></p><div class="topic-wrap"><label for="paper-topic">研究主题</label><div class="select-wrap"><select id="paper-topic" aria-label="研究主题"><option value="all">全部主题</option>${tags.map(tag => `<option value="${esc(tag)}"${state.tag === tag ? ' selected' : ''}>${esc(tag)}</option>`).join('')}</select>${icon('chevron')}</div></div></div>
       <div class="paper-grid" id="paper-grid"></div>
+      <details id="other-papers" class="other-papers" hidden>
+        <summary class="other-papers-toggle"><span lang="en">Other papers</span> <span id="other-papers-count" class="other-papers-count" aria-live="polite">0</span></summary>
+        <p class="other-papers-note">尚未核实到 arXiv 版本的论文</p>
+        <div class="paper-grid" id="other-paper-grid"></div>
+      </details>
     </section>`;
     renderResults();
     syncNav();
