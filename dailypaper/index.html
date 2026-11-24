@@ -153,6 +153,7 @@
   const data = window.PAPER_INBOX_DATA;
   const main = document.querySelector('#main');
   const papers = data.papers;
+  const queuedPaperIds = new Set(papers.map(p=>p.id));
   const byId = new Map(papers.map(p => [p.id, p]));
   const resolveId = id => data.aliases && Object.prototype.hasOwnProperty.call(data.aliases,id) ? data.aliases[id] : id;
   const sources = data.sources;
@@ -179,7 +180,65 @@
     try { const value = JSON.parse(localStorage.getItem(key) || '[]'); return new Set(Array.isArray(value) ? value.map(id => data.aliases && Object.hasOwn(data.aliases,id) ? data.aliases[id] : id).filter(id => byId.has(id)) : []); }
     catch { return new Set(); }
   };
-  const saved = loadSet('paper-inbox:v1:saved');
+  const savedKey = 'paper-inbox:v1:saved';
+  const snapshotPrefix = 'paper-inbox:v2:saved-paper:';
+  const validPaperId = id => typeof id==='string' && /^[a-z0-9-]{1,128}$/.test(id);
+  const saved = new Set(), rawSavedIds = new Map();
+  try {
+    const ids = JSON.parse(localStorage.getItem(savedKey) || '[]');
+    if (Array.isArray(ids)) for (const raw of ids) {
+      const id=resolveId(raw);
+      if (validPaperId(id)) { saved.add(id); if (validPaperId(raw)) rawSavedIds.set(id,raw); }
+    }
+  } catch {}
+  function validSnapshot(p,id) {
+    return p && p.id===id && validPaperId(p.id) &&
+      ['title','shortTitle','published','tldr','titleZh'].every(k=>typeof p[k]==='string') &&
+      ['tags','authors','affiliations','sourceIds'].every(k=>Array.isArray(p[k]) && p[k].every(v=>typeof v==='string')) &&
+      ['metrics','figures','insights','citations'].every(k=>Array.isArray(p[k])) &&
+      Array.isArray(p.abstract?.en) && Array.isArray(p.abstract?.zh) && p.links && p.license;
+  }
+  function putSnapshot(p,id) {
+    const encoded=JSON.stringify(p);
+    if (!validSnapshot(p,id) || encoded.length>600000) throw Error('收藏快照不可保存');
+    localStorage.setItem(snapshotPrefix+id,encoded);
+  }
+  for (const id of saved) {
+    try {
+      const current=byId.get(id);
+      if (current) {
+        // Migrate legacy ID-only favorites while their full details are still available.
+        putSnapshot(current,id);
+      } else {
+        const raw=rawSavedIds.get(id);
+        const old=JSON.parse(localStorage.getItem(snapshotPrefix+id) || (raw && localStorage.getItem(snapshotPrefix+raw)) || 'null');
+        if (validSnapshot(old,id)) byId.set(id,old);
+        else if (raw && validSnapshot(old,raw)) {
+          const migrated={...old,id};
+          byId.set(id,migrated);
+          putSnapshot(migrated,id);
+        }
+      }
+    } catch {}
+  }
+  function changeFavorite(id) {
+    const remove=saved.has(id), changed=new Set(saved), p=byId.get(id);
+    if (remove) changed.delete(id); else changed.add(id);
+    try {
+      if (!remove) putSnapshot(p,id);
+      localStorage.setItem(savedKey,JSON.stringify([...changed]));
+    } catch {
+      if (!remove) { try { localStorage.removeItem(snapshotPrefix+id); } catch {} }
+      return false;
+    }
+    if (remove) {
+      saved.delete(id);
+      try { localStorage.removeItem(snapshotPrefix+id); } catch {}
+      if (!queuedPaperIds.has(id)) byId.delete(id);
+    } else saved.add(id);
+    return true;
+  }
+
 
   const manualReadingStates = new Map();
   try {
@@ -272,7 +331,7 @@
     lastListHash = `#/${state.route}${params.size ? '?' + params : ''}`;
     history.replaceState(null, '', lastListHash);
   }
-  const basePapers = () => state.route === 'saved' ? papers.filter(p => saved.has(p.id)) : papers;
+  const basePapers = () => state.route === 'saved' ? [...saved].map(id=>byId.get(id)).filter(Boolean) : papers;
   function filteredPapers() {
     const terms = state.q.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
     let result = basePapers().filter(p => {
@@ -316,6 +375,9 @@
   }
   function emptyState() {
     const noSaved = state.route === 'saved' && saved.size === 0;
+    if (state.route === 'saved' && saved.size && !basePapers().length) {
+      return `<div class="empty-state"><span class="empty-symbol">${icon('bookmark')}</span><h2>保留了以前的收藏记录</h2><p>这些论文在新版启用前已经滚出队列，此浏览器没有可以恢复的详情。收藏记录仍会保留。</p></div>`;
+    }
     return `<div class="empty-state"><span class="empty-symbol">${icon(noSaved ? 'bookmark' : 'search')}</span><h2>${noSaved ? '把值得细读的论文留下来' : '换个关键词，继续发现'}</h2><p>${noSaved ? '点击卡片右上角的收藏图标，论文会保存在这里。' : '可以搜索论文标题、作者、机构或研究主题。'}</p>${noSaved ? '<a class="button" href="#/papers">浏览全部论文</a>' : '<button class="button" data-action="reset">重置筛选</button>'}</div>`;
   }
 
@@ -355,7 +417,7 @@
     activePaper = null;
     document.title = `${state.route === 'saved' ? '我的收藏' : '论文收件箱'} · 论文来信`;
     const list = basePapers();
-    const tags = [...new Set(papers.flatMap(p => p.tags))];
+    const tags = [...new Set(list.flatMap(p => p.tags))];
     const sourceChip = (id, name, count) => `<button class="chip" data-source="${id}" aria-pressed="${state.source === id}">${id !== 'all' ? icon(id === 'google-scholar' ? 'scholar' : 'inbox', 'source-symbol') : ''}${name}<span class="chip-count">${count}</span></button>`;
     main.innerHTML = `<section class="library" aria-labelledby="library-title">
       <div class="library-heading"><div><p class="eyebrow">YOUR RESEARCH, IN ONE PLACE</p><h1 id="library-title">${state.route === 'saved' ? '值得再读的论文' : '论文收件箱'}</h1><p class="intro">${state.route === 'saved' ? '把感兴趣的想法留下，随时回来接着读。' : '从一张主图、一段 TL;DR，找到值得深入的想法。'}</p></div><div class="collection-meta"><strong>${esc(data.theme || 'Research Collection')}</strong><span>${esc(collectionLabel)} · ${papers.length} 篇论文</span></div></div>
@@ -472,8 +534,13 @@
       }
       case 'save': {
         const id = action.dataset.id;
-        saved.has(id) ? saved.delete(id) : saved.add(id);
-        persist('paper-inbox:v1:saved', saved);
+        if (!changeFavorite(id)) {
+          notify('未能保存收藏。请检查浏览器的本地存储设置或剩余空间。'); break;
+        }
+        if (!saved.has(id) && !queuedPaperIds.has(id) && activePaper?.id===id) {
+          location.hash='#/saved';
+          break;
+        }
         if (state.route === 'saved') renderLibrary(); else refreshSaveButtons(id);
         syncNav(); notify(saved.has(id) ? '已加入我的收藏' : '已取消收藏');
         document.querySelector(`[data-action="save"][data-id="${id}"]`)?.focus({preventScroll:true});
